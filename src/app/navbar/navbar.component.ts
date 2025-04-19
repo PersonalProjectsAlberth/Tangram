@@ -17,4 +17,12 @@ export class NavbarComponent {
   closeDropdown() {
     this.isDropdownOpen = false;
   }
+
+  isDarkMode = true;
+
+  toggleBackgroundColor(event: Event) {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    this.isDarkMode = isChecked;
+    document.body.className = this.isDarkMode ? 'bg-gray-700' : 'bg-white';
+  }
 }
