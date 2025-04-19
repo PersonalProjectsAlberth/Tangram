@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shape-card',
@@ -17,5 +18,11 @@ export class ShapeCardComponent implements OnInit{
     this.http.get<any[]>('/assets/shapes.json').subscribe((data) => {
       this.shapes = data;
     });
+  }
+
+  private _router = inject(Router);
+
+  navegate(id: number) {
+    this._router.navigate(['/shape', id]);
   }
 }
