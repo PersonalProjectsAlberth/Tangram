@@ -1,0 +1,20 @@
+<div
+  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+>
+  <div
+    *ngFor="let shape of shapes"
+    class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden border-2 border-gray-300"
+  >
+    <svg alt="" width="150" height="150" viewBox="0 0 306 306">
+      <path [attr.d]="shape.path"></path>
+    </svg>
+    <div class="p-2 text-center">
+      <button
+        type="button"
+        class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+      >
+        Scan
+      </button>
+    </div>
+  </div>
+</div>
