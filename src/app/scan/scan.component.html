@@ -1,1 +1,15 @@
-<p>scan works!</p>
+<div class="flex justify-center items-center h-screen">
+    <div
+      *ngIf="shapePath; else notFound"
+      class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden border-2 border-gray-300"
+    >
+      <svg alt="Shape" width="300" height="300" viewBox="0 0 306 306">
+        <path [attr.d]="shapePath"></path>
+      </svg>
+    </div>
+  
+    <!-- Mensaje si no se encuentra el ID -->
+    <ng-template #notFound>
+      <p class="text-center text-red-500 font-bold">Shape not found!</p>
+    </ng-template>
+  </div>
