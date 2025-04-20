@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-scan',
@@ -10,12 +11,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./scan.component.css']
 })
 export class ScanComponent implements OnInit {
+
+  isDarkMode = true;
   shapeId!: string;
   shapePath: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private themeService: ThemeService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -25,6 +29,10 @@ export class ScanComponent implements OnInit {
     this.http.get<any[]>('/assets/shapes.json').subscribe((data) => {
       const shape = data.find((item) => item.id === parseInt(this.shapeId, 10));
       this.shapePath = shape ? shape.path : null;
+    });
+
+    this.themeService.darkMode$.subscribe((isDarkMode) => {
+      this.isDarkMode = isDarkMode;
     });
   }
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,23 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  isDarkMode = true;
   isDropdownOpen = false;
+
+  constructor(private themeService: ThemeService) {}
+
+  ngOnInit(): void {
+    this.themeService.darkMode$.subscribe((isDarkMode) => {
+      this.isDarkMode = isDarkMode;
+      document.body.className = isDarkMode ? 'bg-gray-700' : 'bg-white';
+    });
+  }
+
+  toggleBackgroundColor(event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    this.themeService.setDarkMode(isChecked);
+  }
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -16,13 +33,5 @@ export class NavbarComponent {
 
   closeDropdown() {
     this.isDropdownOpen = false;
-  }
-
-  isDarkMode = true;
-
-  toggleBackgroundColor(event: Event) {
-    const isChecked = (event.target as HTMLInputElement).checked;
-    this.isDarkMode = isChecked;
-    document.body.className = this.isDarkMode ? 'bg-gray-700' : 'bg-white';
   }
 }
