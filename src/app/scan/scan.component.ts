@@ -9,7 +9,7 @@ import { TensorflowService } from '../services/tensorflow.service';
   selector: 'app-scan',
   imports: [CommonModule, HttpClientModule],
   templateUrl: './scan.component.html',
-  styleUrls: ['./scan.component.css']
+  styleUrls: ['./scan.component.css'],
 })
 export class ScanComponent implements OnInit {
   isDarkMode = true;
@@ -50,11 +50,9 @@ export class ScanComponent implements OnInit {
   }
 
   async handlePhotoCapture(event: Event): Promise<void> {
-    
     this.predictionMessageG = '';
     this.predictionMessageB = '';
     const input = event.target as HTMLInputElement;
-
     if (input.files && input.files.length > 0) {
       const selectedFile = input.files[0];
       console.log('Foto capturada:', selectedFile);
@@ -64,7 +62,6 @@ export class ScanComponent implements OnInit {
 
       // Esperar a que Angular renderice el canvas
       setTimeout(async () => {
-        
         const canvas = this.canvasElement?.nativeElement;
         if (!canvas) {
           console.error('El canvas no está disponible en el DOM.');
