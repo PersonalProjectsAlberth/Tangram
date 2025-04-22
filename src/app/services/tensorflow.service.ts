@@ -7,8 +7,6 @@ import * as tf from '@tensorflow/tfjs';
 export class TensorflowService {
   private model: tf.LayersModel | null = null;
 
-  constructor() {}
-
   // Cargar el modelo TensorFlow
   async loadModel(modelPath: string): Promise<void> {
     try {
