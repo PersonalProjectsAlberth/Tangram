@@ -10,7 +10,6 @@ export class TensorflowService {
   async loadModel(modelPath: string): Promise<void> {
     try {
       this.model = await tf.loadLayersModel(modelPath);
-      console.log('Modelo cargado correctamente');
     } catch (error) {
       console.error('Error al cargar el modelo:', error);
     }

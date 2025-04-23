@@ -34,7 +34,6 @@ export class ScanComponent implements OnInit {
     this.shapeId = this.route.snapshot.paramMap.get('id') || '';
 
     await this.tfService.loadModel('/assets/my_model/model.json');
-    console.log('Modelo cargado correctamente.');
 
     this.http.get<any[]>('/assets/shapes.json').subscribe((data) => {
       const shape = data.find((item) => item.id === parseInt(this.shapeId, 10));
@@ -52,7 +51,6 @@ export class ScanComponent implements OnInit {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       const selectedFile = input.files[0];
-      console.log('Foto capturada:', selectedFile);
 
       this.isCameraActive = true;
 
@@ -89,14 +87,8 @@ export class ScanComponent implements OnInit {
 
           try {
             const prediction = await this.tfService.predict(canvas);
-
-            console.log('Predicción del modelo:', prediction);
-
             const predictionreuslt = Array.from(prediction) as number[];
-
             const maxValue = Math.max(...predictionreuslt);
-            console.log('Valor máximo:', maxValue);
-
             const maxIndex = predictionreuslt.indexOf(maxValue);
 
             if (maxIndex + 1 === Number(this.shapeId)) {
