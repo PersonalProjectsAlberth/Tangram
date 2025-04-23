@@ -30,20 +30,17 @@ export class ScanComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    // Obtener el ID de la figura
+    
     this.shapeId = this.route.snapshot.paramMap.get('id') || '';
 
-    // Cargar el modelo TensorFlow
     await this.tfService.loadModel('/assets/my_model/model.json');
     console.log('Modelo cargado correctamente.');
 
-    // Obtener el shapePath desde el archivo JSON
     this.http.get<any[]>('/assets/shapes.json').subscribe((data) => {
       const shape = data.find((item) => item.id === parseInt(this.shapeId, 10));
       this.shapePath = shape ? shape.path : null;
     });
 
-    // Suscribirse al modo oscuro
     this.themeService.darkMode$.subscribe((isDarkMode) => {
       this.isDarkMode = isDarkMode;
     });
@@ -57,10 +54,8 @@ export class ScanComponent implements OnInit {
       const selectedFile = input.files[0];
       console.log('Foto capturada:', selectedFile);
 
-      // Cambiar el estado para mostrar el canvas
       this.isCameraActive = true;
 
-      // Esperar a que Angular renderice el canvas
       setTimeout(async () => {
         const canvas = this.canvasElement?.nativeElement;
         if (!canvas) {
@@ -77,10 +72,10 @@ export class ScanComponent implements OnInit {
         const imageUrl = URL.createObjectURL(selectedFile);
         const img = new Image();
         img.onload = async () => {
-          // Ajustar el tamaño del canvas manteniendo las proporciones
+
           const aspectRatio = img.width / img.height;
-          const maxWidth = 300; // Ancho máximo deseado
-          const maxHeight = 300; // Alto máximo deseado
+          const maxWidth = 300;
+          const maxHeight = 300;
 
           if (aspectRatio > 1) {
             canvas.width = maxWidth;
@@ -90,10 +85,8 @@ export class ScanComponent implements OnInit {
             canvas.width = maxHeight * aspectRatio;
           }
 
-          // Dibujar la imagen en el canvas
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          // Aplicar el modelo TensorFlow a la imagen
           try {
             const prediction = await this.tfService.predict(canvas);
 
@@ -101,29 +94,25 @@ export class ScanComponent implements OnInit {
 
             const predictionreuslt = Array.from(prediction) as number[];
 
-            // Obtener el valor máximo
             const maxValue = Math.max(...predictionreuslt);
             console.log('Valor máximo:', maxValue);
 
-            // Obtener la posición (índice) del valor máximo
             const maxIndex = predictionreuslt.indexOf(maxValue);
 
-            // console.log('Índice del valor máximo:', maxIndex+1);
             if (maxIndex + 1 === Number(this.shapeId)) {
               this.predictionMessageG = '✅ La predicción es correcta';
             } else {
               this.predictionMessageB = '❌ La predicción es incorrecta';
             }
-            // console.log('Valor máximo:', maxValue);
+
           } catch (error) {
             console.error('Error al hacer la predicción:', error);
           }
 
-          // Liberar la URL creada
           URL.revokeObjectURL(imageUrl);
         };
         img.src = imageUrl;
-      }, 10); // Espera mínima para asegurar que el DOM esté actualizado
+      }, 10);
     }
   }
 }
