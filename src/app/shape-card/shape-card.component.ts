@@ -14,6 +14,7 @@ export class ShapeCardComponent implements OnInit{
 
   isDarkMode = true;
   shapes: any[] = [];
+  state: { [key: string]: boolean } = {};
 
   constructor(
     private http: HttpClient,
@@ -28,11 +29,20 @@ export class ShapeCardComponent implements OnInit{
     this.themeService.darkMode$.subscribe((isDarkMode) => {
       this.isDarkMode = isDarkMode;
     });
+
+    const storedState = localStorage.getItem('state');
+    if (storedState) {
+      this.state = JSON.parse(storedState);
+    }
   }
 
   private _router = inject(Router);
 
   navegate(id: number) {
     this._router.navigate(['/shape', id]);
+  }
+
+  isTaskCompleted(id: string): boolean {
+    return !!this.state[id];
   }
 }
