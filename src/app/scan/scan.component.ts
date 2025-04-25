@@ -18,6 +18,7 @@ export class ScanComponent implements OnInit {
   isCameraActive: boolean = false;
   predictionMessageG: string = '';
   predictionMessageB: string = '';
+  isShapeCompleted: boolean = false;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -30,8 +31,10 @@ export class ScanComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    
     this.shapeId = this.route.snapshot.paramMap.get('id') || '';
+
+    const state = JSON.parse(localStorage.getItem('state') || '{}');
+    this.isShapeCompleted = state[this.shapeId] === true;
 
     await this.tfService.loadModel('/assets/my_model/model.json');
 
@@ -70,7 +73,6 @@ export class ScanComponent implements OnInit {
         const imageUrl = URL.createObjectURL(selectedFile);
         const img = new Image();
         img.onload = async () => {
-
           const aspectRatio = img.width / img.height;
           const maxWidth = 300;
           const maxHeight = 300;
@@ -93,10 +95,14 @@ export class ScanComponent implements OnInit {
 
             if (maxIndex + 1 === Number(this.shapeId)) {
               this.predictionMessageG = '✅ La predicción es correcta';
+
+              const state = JSON.parse(localStorage.getItem('state') || '{}');
+              state[this.shapeId] = true;
+              localStorage.setItem('state', JSON.stringify(state));
+              this.isShapeCompleted = true;
             } else {
               this.predictionMessageB = '❌ La predicción es incorrecta';
             }
-
           } catch (error) {
             console.error('Error al hacer la predicción:', error);
           }
