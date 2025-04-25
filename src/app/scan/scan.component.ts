@@ -92,9 +92,12 @@ export class ScanComponent implements OnInit {
             if (maxIndex + 1 === Number(this.shapeId)) {
               this.predictionMessageG = '✅ La predicción es correcta';
 
-              const state = JSON.parse(localStorage.getItem('state') || '{}');
-              state[this.shapeId] = true;
+              const state = JSON.parse(localStorage.getItem('state') || '[]');
+
+              if(!state.includes(this.shapeId)) {
+              state.push(this.shapeId)
               localStorage.setItem('state', JSON.stringify(state));
+              }
 
             } else {
               this.predictionMessageB = '❌ La predicción es incorrecta';
