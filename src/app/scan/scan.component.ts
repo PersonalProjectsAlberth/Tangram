@@ -20,6 +20,8 @@ export class ScanComponent implements OnInit {
   predictionMessageB: string = '';
   isShapeCompleted: boolean = false;
   totalShapes: number = 0;
+  private touchStartX: number = 0;
+  private touchEndX: number = 0;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -137,5 +139,23 @@ export class ScanComponent implements OnInit {
 
   private routeToShape(shapeId: number): void {
     window.location.href = `/shape/${shapeId}`;
+  }
+
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipeGesture();
+  }
+
+  private handleSwipeGesture(): void {
+    const swipeThreshold = 50;
+    if (this.touchEndX < this.touchStartX - swipeThreshold) {
+      this.navigateToNext();
+    } else if (this.touchEndX > this.touchStartX + swipeThreshold) {
+      this.navigateToPrevious();
+    }
   }
 }

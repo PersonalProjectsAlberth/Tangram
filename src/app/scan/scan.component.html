@@ -1,5 +1,9 @@
 <div class="flex justify-center items-center h-[calc(100vh-64px)]">
-  <div *ngIf="shapePath; else notFound">
+  <div
+    *ngIf="shapePath; else notFound"
+    (touchstart)="onTouchStart($event)"
+    (touchend)="onTouchEnd($event)"
+  >
     <div
       [class.bg-black]="isDarkMode"
       [class.bg-white]="!isDarkMode"
@@ -94,7 +98,7 @@
         (click)="navigateToNext()"
         [class.bg-white]="isDarkMode"
         [class.bg-gray-400]="!isDarkMode"
-        class=" rounded-full p-0.5 hover:bg-gray-600"
+        class="rounded-full p-0.5 hover:bg-gray-600"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
