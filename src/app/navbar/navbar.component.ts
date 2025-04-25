@@ -49,4 +49,9 @@ export class NavbarComponent {
       this.closeDropdown();
     }
   }
+
+  @HostListener('document:scroll')
+  onDocumentScroll() {
+    this.closeDropdown();
+  }
 }
