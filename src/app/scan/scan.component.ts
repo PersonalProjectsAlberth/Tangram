@@ -18,6 +18,7 @@ export class ScanComponent implements OnInit {
   isCameraActive: boolean = false;
   predictionMessageG: string = '';
   predictionMessageB: string = '';
+  isShapeCompleted: boolean = false;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -31,6 +32,9 @@ export class ScanComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.shapeId = this.route.snapshot.paramMap.get('id') || '';
+
+    const state = JSON.parse(localStorage.getItem('state') || '{}');
+    this.isShapeCompleted = state[this.shapeId] === true;
 
     await this.tfService.loadModel('/assets/my_model/model.json');
 
@@ -95,7 +99,7 @@ export class ScanComponent implements OnInit {
               const state = JSON.parse(localStorage.getItem('state') || '{}');
               state[this.shapeId] = true;
               localStorage.setItem('state', JSON.stringify(state));
-              
+              this.isShapeCompleted = true;
             } else {
               this.predictionMessageB = '❌ La predicción es incorrecta';
             }
