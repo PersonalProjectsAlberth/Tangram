@@ -19,6 +19,8 @@ export class ScanComponent implements OnInit {
   predictionMessageG: string = '';
   predictionMessageB: string = '';
   isShapeCompleted: boolean = false;
+  isFirstShape: boolean = false;
+  isLastShape: boolean = false;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -41,6 +43,10 @@ export class ScanComponent implements OnInit {
     this.http.get<any[]>('/assets/shapes.json').subscribe((data) => {
       const shape = data.find((item) => item.id === parseInt(this.shapeId, 10));
       this.shapePath = shape ? shape.path : null;
+
+      const currentId = parseInt(this.shapeId, 10);
+      this.isFirstShape = currentId === 1;
+      this.isLastShape = currentId === data.length;
     });
 
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -112,5 +118,21 @@ export class ScanComponent implements OnInit {
         img.src = imageUrl;
       }, 10);
     }
+  }
+
+  navigateToPrevious(): void {
+    const previousId = Number(this.shapeId) - 1;
+    if (previousId > 0) {
+      this.routeToShape(previousId);
+    }
+  }
+  
+  navigateToNext(): void {
+    const nextId = Number(this.shapeId) + 1;
+    this.routeToShape(nextId);
+  }
+  
+  private routeToShape(shapeId: number): void {
+    window.location.href = `/shape/${shapeId}`;
   }
 }
