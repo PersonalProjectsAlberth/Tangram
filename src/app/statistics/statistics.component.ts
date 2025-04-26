@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-statistics',
@@ -11,10 +12,32 @@ import { HighchartsChartModule } from 'highcharts-angular';
 export class StatisticsComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
 
+  constructor(private themeService: ThemeService) {}
+
   ngOnInit(): void {
+    this.themeService.darkMode$.subscribe((isDarkMode) => {
+      this.updateChartColors(isDarkMode);
+    });
     this.loadChartData();
   }
 
+  updateChartColors(isDarkMode: boolean): void {
+    this.chartOptions = {
+      ...this.chartOptions,
+      chart: {
+        ...this.chartOptions.chart,
+        backgroundColor: isDarkMode ? '#000000' : '#f3f4f6',
+      },
+      title: {
+        ...this.chartOptions.title,
+        style: {
+          ...this.chartOptions.title?.style,
+          color: isDarkMode ? '#FFFFFF' : '#000000',
+        },
+      },
+    };
+  }
+  
   async loadChartData(): Promise<void> {
     try {
       const state = JSON.parse(localStorage.getItem('state') || '{}');
@@ -50,6 +73,11 @@ export class StatisticsComponent implements OnInit {
     },
     title: {
       text: 'Complete Shapes Statistics',
+      style: {
+        color: '#000000',
+        fontSize: '20px',
+        textAlign: 'center',
+      },
     },
     tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
@@ -65,7 +93,7 @@ export class StatisticsComponent implements OnInit {
         cursor: 'pointer',
         dataLabels: {
           enabled: true,
-          format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+          format: '<b>{point.name} ({point.y})</b><br>{point.percentage:.1f} %',
           style: {
             textAlign: 'center',
             fontSize: '14px',
@@ -80,6 +108,9 @@ export class StatisticsComponent implements OnInit {
         data: [],
       },
     ],
+    credits: {
+      enabled: false,
+    },
   };
 
   clearState(): void {
