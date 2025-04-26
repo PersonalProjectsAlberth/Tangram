@@ -56,7 +56,12 @@ export class NavbarComponent {
     this.closeDropdown();
   }
 
-  navegate(): void {
+  navegateSta(): void {
     this._router.navigate(['/statistics']);
   }
+
+  navegateSet(): void {
+    this._router.navigate(['/settings']);
+  }
+
 }
