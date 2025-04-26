@@ -1,9 +1,20 @@
-<div class="flex justify-center items-center h-[calc(100vh-64px)]">
+<div class="flex flex-col items-center justify-center min-h-screen">
   <div
-    class="max-w-sm mx-auto rounded-lg shadow-md overflow-hidden border-2 border-gray-300 relative"
+    class="w-full max-w-full sm:max-w-lg mx-auto rounded-lg shadow-md overflow-hidden border-2 border-gray-300 relative"
   >
-    <!-- <div>
-      <div alt="Shape" width="300" height="300" viewBox="0 0 306 306"></div>
-    </div> -->
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      style="width: 100%; height: 400px; display: block"
+    ></highcharts-chart>
+  </div>
+
+  <div class="mt-4 w-full flex justify-center">
+    <button
+      class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+      (click)="clearState()"
+    >
+      Delete Data
+    </button>
   </div>
 </div>
