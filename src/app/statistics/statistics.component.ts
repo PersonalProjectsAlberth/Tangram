@@ -71,6 +71,7 @@ export class StatisticsComponent implements OnInit {
       type: 'pie',
       backgroundColor: '#f3f4f6',
     },
+    colors: ['#4CAF50', '#FF5722'],
     title: {
       text: 'Complete Shapes Statistics',
       style: {
