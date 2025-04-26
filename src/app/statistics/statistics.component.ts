@@ -11,11 +11,13 @@ import { ThemeService } from '../services/theme.service';
 })
 export class StatisticsComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
+  isDarkMode: boolean = false;
 
   constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
+      this.isDarkMode = isDarkMode;
       this.updateChartColors(isDarkMode);
     });
     this.loadChartData();
@@ -37,17 +39,19 @@ export class StatisticsComponent implements OnInit {
       },
     };
   }
-  
+
   async loadChartData(): Promise<void> {
     try {
       const state = JSON.parse(localStorage.getItem('state') || '{}');
-      const completed = Object.values(state).filter((value) => value === true).length;
-  
+      const completed = Object.values(state).filter(
+        (value) => value === true
+      ).length;
+
       const response = await fetch('/assets/shapes.json');
       const shapes = await response.json();
       const totalShapes = shapes.length;
       const incomplete = totalShapes - completed;
-  
+
       this.chartOptions = {
         ...this.chartOptions,
         series: [
@@ -64,7 +68,7 @@ export class StatisticsComponent implements OnInit {
     } catch (error) {
       console.error('Error loading chart data:', error);
     }
-  }  
+  }
 
   chartOptions: Highcharts.Options = {
     chart: {
@@ -115,7 +119,9 @@ export class StatisticsComponent implements OnInit {
   };
 
   clearState(): void {
-    const confirmation = confirm('Are you sure you want to delete your progress? This action cannot be undone.');
+    const confirmation = confirm(
+      'Are you sure you want to delete your progress? This action cannot be undone.'
+    );
     if (confirmation) {
       localStorage.removeItem('state');
       this.loadChartData();
