@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ export class NavbarComponent {
   isDarkMode = true;
   isDropdownOpen = false;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private _router: Router) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -53,5 +54,9 @@ export class NavbarComponent {
   @HostListener('document:scroll')
   onDocumentScroll() {
     this.closeDropdown();
+  }
+
+  navegate(): void {
+    this._router.navigate(['/statistics']);
   }
 }
