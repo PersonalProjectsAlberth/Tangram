@@ -3,10 +3,11 @@ import { Component, HostListener } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { FastAccessService } from '../services/fast-access.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
