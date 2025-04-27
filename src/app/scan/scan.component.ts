@@ -99,14 +99,24 @@ export class ScanComponent implements OnInit {
             const maxIndex = predictionreuslt.indexOf(maxValue);
 
             if (maxIndex + 1 === Number(this.shapeId)) {
-              this.predictionMessageG = '✅ La predicción es correcta';
+              this.predictionMessageG = '✅ Correct prediction!';
 
               const state = JSON.parse(localStorage.getItem('state') || '{}');
               state[this.shapeId] = true;
               localStorage.setItem('state', JSON.stringify(state));
               this.isShapeCompleted = true;
+              
+              if (navigator.vibrate) {
+                navigator.vibrate(200);
+              }
+
             } else {
-              this.predictionMessageB = '❌ La predicción es incorrecta';
+              this.predictionMessageB = '❌ Incorrect prediction!';
+
+              if (navigator.vibrate) {
+                navigator.vibrate([100, 50, 100]);
+              }
+
             }
           } catch (error) {
             console.error('Error al hacer la predicción:', error);

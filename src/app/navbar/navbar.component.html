@@ -5,20 +5,54 @@
         <img src="puzzle.png" alt="Logo" class="h-8 w-8 mr-2" />
         <span class="text-white text-lg font-bold">Tangram-App</span>
       </a>
-      <div class="relative flex items-center space-x-4">
-        <div>
-          <label class="inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              class="sr-only peer"
-              [checked]="isDarkMode"
-              (change)="toggleBackgroundColor($event)"
-            />
-            <div
-              class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-            ></div>
-          </label>
-        </div>
+      <div *ngIf="showFastAccess" class="relative flex items-center space-x-4">
+        <label class="inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            class="sr-only"
+            [checked]="isDarkMode"
+            (change)="toggleBackgroundColor($event)"
+          />
+
+          <div
+            class="relative w-12 h-6 bg-transparent border border-gray-300 rounded-full"
+          >
+            <!-- Ícono de sol -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="absolute top-0.5 left-1 w-4.5 h-4.5 text-black z-10 transition-opacity"
+              [ngClass]="{
+                'opacity-100': !isDarkMode,
+                'opacity-0': isDarkMode
+              }"
+              fill="white"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+              />
+            </svg>
+
+            <!-- Ícono de luna -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="absolute top-0.5 right-1 w-4 h-4 text-gray-500 z-10 transition-opacity"
+              [ngClass]="{
+                'opacity-100': isDarkMode,
+                'opacity-0': !isDarkMode
+              }"
+              fill="white"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+              />
+            </svg>
+
+            <!-- Botón deslizante -->
+            <div [class.translate-x-6]="isDarkMode"></div>
+          </div>
+        </label>
       </div>
       <div class="relative">
         <button
@@ -28,21 +62,28 @@
           aria-haspopup="true"
           (click)="toggleDropdown()"
         >
-        <div style="background-color: rgb(23, 162, 209); padding: 10px; display: inline-block; border-radius: 50%;">
-          <svg
-            class="h-8 w-8 rounded-full"
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            fill="white"
-            class="bi bi-person-fill"
-            viewBox="0 0 16 16"
+          <div
+            style="
+              background-color: rgb(23, 162, 209);
+              padding: 10px;
+              display: inline-block;
+              border-radius: 50%;
+            "
           >
-            <path
-              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
-            />
-          </svg>
-        </div>
+            <svg
+              class="h-8 w-8 rounded-full"
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="white"
+              class="bi bi-person-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+              />
+            </svg>
+          </div>
         </button>
 
         <div
@@ -91,11 +132,10 @@
             </svg>
           </a>
 
-          <!-- <a
-            href="#"
+          <a
             class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             role="menuitem"
-            (click)="closeDropdown()"
+            (click)="closeDropdown(); navegateSet()"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,14 +151,13 @@
                 d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
               />
             </svg>
-
-            Ajustes
-          </a> -->
+            Settings
+          </a>
 
           <a
             class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             role="menuitem"
-            (click)=" closeDropdown(); navegate()"
+            (click)="closeDropdown(); navegateSta()"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +173,6 @@
                 d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"
               />
             </svg>
-
             Statistics
           </a>
 
