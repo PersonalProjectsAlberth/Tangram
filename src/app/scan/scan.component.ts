@@ -105,8 +105,18 @@ export class ScanComponent implements OnInit {
               state[this.shapeId] = true;
               localStorage.setItem('state', JSON.stringify(state));
               this.isShapeCompleted = true;
+              
+              if (navigator.vibrate) {
+                navigator.vibrate(200);
+              }
+
             } else {
               this.predictionMessageB = '❌ La predicción es incorrecta';
+
+              if (navigator.vibrate) {
+                navigator.vibrate([100, 50, 100]);
+              }
+
             }
           } catch (error) {
             console.error('Error al hacer la predicción:', error);
