@@ -12,7 +12,7 @@ export class FastAccessService {
 
   setFastAccess(isEnabled: boolean): void {
     localStorage.setItem('fastAccess', JSON.stringify(isEnabled));
-    this.fastAccessSubject.next(isEnabled); // Notifica a los suscriptores
+    this.fastAccessSubject.next(isEnabled);
   }
 
   getFastAccess(): boolean {
