@@ -1,7 +1,9 @@
 {
   "NAV": {
     "SETTINGS": "Settings",
-    "STATISTICS": "Statistics"
+    "STATISTICS": "Statistics",
+    "LOGOUT": "Logout",
+    "GOPREMIUM": "Go Premium"
   },
   "SET": {
     "SETTINGS": "Settings",
