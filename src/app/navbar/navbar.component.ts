@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
+import { FastAccessService } from '../services/fast-access.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +13,17 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   isDarkMode = true;
   isDropdownOpen = false;
+  showFastAccess: boolean = false;
 
-  constructor(private themeService: ThemeService, private _router: Router) {}
+  constructor(private themeService: ThemeService, private _router: Router, private fastAccessService: FastAccessService) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
       this.isDarkMode = isDarkMode;
       document.body.className = isDarkMode ? 'bg-gray-700' : 'bg-white';
+    });
+    this.fastAccessService.fastAccess$.subscribe((isEnabled) => {
+      this.showFastAccess = isEnabled;
     });
   }
 

@@ -15,7 +15,7 @@
   >
     Language
   </h2>
-  <div class="p-4 flex items-center justify-between w-1/2 max-w-xs">
+  <div class="p-4 pb-10 flex items-center justify-between w-1/2 max-w-xs">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -60,14 +60,9 @@
     </svg>
 
     <label class="inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        class="sr-only peer"
-        [checked]="isDarkMode"
-        (change)="toggleLanguage()"
-      />
+      <input type="checkbox" class="sr-only peer" checked (change)="toggleLanguage()" />
       <div
-        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
       ></div>
     </label>
 
@@ -95,8 +90,9 @@
   </div>
 
   <!-- ---------------------------------------Theme--------------------------------------- -->
+
   <h2
-    class="pt-8 text-white text-2xl font-bold"
+    class="border-t-2 pt-10 text-white text-2xl font-bold"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
   >
@@ -109,7 +105,7 @@
       height="30"
       fill="currentColor"
       class="bi bi-sun-fill"
-      [class.text-white]="isDarkMode"
+      [class.text-gray-600]="isDarkMode"
       [class.text-black]="!isDarkMode"
       viewBox="0 0 16 16"
     >
@@ -126,7 +122,7 @@
         (change)="toggleBackgroundColor($event)"
       />
       <div
-        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
       ></div>
     </label>
 
@@ -137,12 +133,45 @@
       fill="currentColor"
       class="bi bi-moon-fill"
       [class.text-white]="isDarkMode"
-      [class.text-black]="!isDarkMode"
+      [class.text-gray-300]="!isDarkMode"
       viewBox="0 0 16 16"
     >
       <path
         d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
       />
     </svg>
+  </div>
+  <h3
+    class="pt-2 text-white text-base"
+    [class.text-white]="isDarkMode"
+    [class.text-black]="!isDarkMode"
+  >
+    Fast access
+  </h3>
+  <div class="p-4 flex items-center justify-between">
+    <span
+      class="text-white text-sm"
+      [class.text-white]="isDarkMode"
+      [class.text-black]="!isDarkMode"
+      >OFF</span
+    >
+
+    <label class="p-2 inline-flex items-center cursor-pointer">
+      <input
+      type="checkbox"
+      class="sr-only peer"
+      [checked]="fastAccess"
+      (change)="toggleFastAccess($event)"
+      />
+      <div
+        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+      ></div>
+    </label>
+    <span
+      class="text-white text-sm"
+      [class.text-white]="isDarkMode"
+      [class.text-black]="!isDarkMode"
+      >ON</span
+    >
   </div>
 </div>
