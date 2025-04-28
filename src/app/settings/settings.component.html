@@ -260,15 +260,18 @@
       {{ "SET.ON" | translate }}
     </span>
   </div>
-  <div class="w-80 border-t border-gray-300 my-2"></div>
+
+  <!-- ---------------------------------------Vibration--------------------------------------- -->
+
+  <div class="w-80 border-t border-gray-300 my-2 hidden-ios"></div>
   <h2
-    class="p-2 text-white text-2xl font-light"
+    class="p-2 text-white text-2xl font-light hidden-ios"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
   >
     - - {{ "SET.VIB" | translate }} - -
   </h2>
-  <div class="flex items-center justify-between">
+  <div class="flex items-center justify-between hidden-ios">
     <span
       class="text-white text-sm"
       [class.text-white]="isDarkMode"
