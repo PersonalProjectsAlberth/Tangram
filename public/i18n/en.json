@@ -11,7 +11,11 @@
     "COMPLETED": "Completed",
     "INCOMPLETE": "Incomplete",
     "PERCENTAGE": "Percentage",
-    "TITLE": "Complete Shapes Statistics"
+    "TITLE": "Complete Shapes Statistics",
+    "CONFIRM_DATA_DELETE": "This action cannot be undone",
+    "CONFIRM_DATA_MESSAGE": "Are you sure you want to delete your progress?",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel"
   },
   "SET": {
     "SETTINGS": "Settings",
