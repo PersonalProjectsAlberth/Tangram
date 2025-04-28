@@ -39,7 +39,7 @@
   [ngClass]="{ 'fade-enter': !isVisible, 'fade-enter-active': isVisible }"
 >
   <h1
-    class="p-8 text-white text-3xl font-bold"
+    class="p-4 text-white text-3xl font-bold"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
   >
@@ -48,13 +48,13 @@
 
   <!-- ---------------------------------------Language--------------------------------------- -->
   <h2
-    class="pt-8 text-white text-2xl font-bold"
+    class="p-2 text-white text-2xl font-light"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
   >
-    {{ "SET.LANGUAGE" | translate }}
+    - - {{ "SET.LANGUAGE" | translate }} - -
   </h2>
-  <div class="p-4 pb-10 flex items-center justify-between w-1/2 max-w-xs">
+  <div class=" flex items-center justify-between w-1/2 max-w-xs">
     <!-- SPANISH FLAG -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -174,15 +174,15 @@
   </div>
 
   <!-- ---------------------------------------Theme--------------------------------------- -->
-
+  <div class="w-80 border-t border-gray-300 my-2"></div>
   <h2
-    class="border-t-2 pt-10 text-white text-2xl font-bold"
+    class="p-2 text-white text-2xl font-light"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
   >
-    {{ "SET.THEME" | translate }}
+    - - {{ "SET.THEME" | translate }} - -
   </h2>
-  <div class="p-4 flex items-center justify-between w-1/2 max-w-xs">
+  <div class=" flex items-center justify-between w-1/2 max-w-xs">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="30"
@@ -260,4 +260,41 @@
       {{ "SET.ON" | translate }}
     </span>
   </div>
+  <div class="w-80 border-t border-gray-300 my-2"></div>
+  <h2
+    class="p-2 text-white text-2xl font-light"
+    [class.text-white]="isDarkMode"
+    [class.text-black]="!isDarkMode"
+  >
+    - - {{ "SET.VIB" | translate }} - -
+  </h2>
+  <div class="flex items-center justify-between">
+    <span
+      class="text-white text-sm"
+      [class.text-white]="isDarkMode"
+      [class.text-black]="!isDarkMode"
+    >
+      {{ "SET.OFF" | translate }}
+    </span>
+
+    <label class="p-2 inline-flex items-center cursor-pointer">
+      <input
+        type="checkbox"
+        class="sr-only peer"
+        [checked]="fastAccess"
+        (change)="toggleFastAccess($event)"
+      />
+      <div
+        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
+      ></div>
+    </label>
+    <span
+      class="text-white text-sm"
+      [class.text-white]="isDarkMode"
+      [class.text-black]="!isDarkMode"
+    >
+      {{ "SET.ON" | translate }}
+    </span>
+  </div>
+  
 </div>

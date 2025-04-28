@@ -1,12 +1,12 @@
 {
   "NAV": {
-    "SETTINGS": "Configuraciones",
-    "STATISTICS": "Estadísticas",
+    "SETTINGS": "Ajustes",
+    "STATISTICS": "Progreso",
     "LOGOUT": "Cerrar sesión",
     "GOPREMIUM": "Premium"
   },
   "STA": {
-    "STATISTICS": "Estadísticas",
+    "STATISTICS": "PROGRESO",
     "DELETE": "Borrar datos",
     "COMPLETED": "Completo",
     "INCOMPLETE": "Incompleto",
@@ -18,7 +18,7 @@
     "CANCEL": "Cancelar"
   },
   "SET": {
-    "SETTINGS": "Configuraciones",
+    "SETTINGS": "AJUSTES",
     "LANGUAGE": "Idioma",
     "THEME": "Tema",
     "CONFIRM_LANGUAGE_CHANGE": "Cambio de idioma",
@@ -27,7 +27,8 @@
     "CANCEL": "Cancelar",
     "PIN": "Anclar en la barra de navegación",
     "OFF": "No",
-    "ON": "Si"
+    "ON": "Si",
+    "VIB": "Vibración"
   },
   "SCA": {
     "SCAN": "Escanear",
