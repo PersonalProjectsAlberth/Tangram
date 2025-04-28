@@ -7,7 +7,7 @@ export class LanguageService {
   private readonly LANGUAGE_KEY = 'language';
 
   getLanguage(): string {
-    return localStorage.getItem(this.LANGUAGE_KEY) || 'en';
+    return localStorage.getItem(this.LANGUAGE_KEY) || 'es';
   }
 
   setLanguage(language: string): void {
