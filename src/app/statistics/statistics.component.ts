@@ -3,16 +3,18 @@ import Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ThemeService } from '../services/theme.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-statistics',
-  imports: [HighchartsChartModule, TranslatePipe],
+  imports: [HighchartsChartModule, TranslatePipe, CommonModule],
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.css',
 })
 export class StatisticsComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   isDarkMode: boolean = false;
+  isVisible: boolean = false;
 
   constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
@@ -22,6 +24,9 @@ export class StatisticsComponent implements OnInit {
       this.updateChartColors(isDarkMode);
     });
     this.loadChartData();
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   updateChartColors(isDarkMode: boolean): void {
