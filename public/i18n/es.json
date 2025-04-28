@@ -28,6 +28,7 @@
   "SCA": {
     "SCAN": "Escanear",
     "CORRECT": "¡Predicción correcta!",
-    "INCORRECT": "¡Predicción incorrecta!"
+    "INCORRECT": "¡Predicción incorrecta!",
+    "LOADING": "Cargando figura..."
   }
 }
