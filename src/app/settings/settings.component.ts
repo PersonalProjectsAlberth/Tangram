@@ -32,7 +32,7 @@ export class SettingsComponent {
       document.body.className = isDarkMode ? 'bg-gray-700' : 'bg-white';
     });
     setTimeout(() => {
-      this.isVisible = true; // Activa la animación después de cargar el componente
+      this.isVisible = true;
     }, 0);
   }
 
@@ -42,9 +42,9 @@ export class SettingsComponent {
   }
 
   toggleLanguage(): void {
+    this.showLanguageModal = true;
     this.newLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
     this.pendingLanguage = this.newLanguage;
-    this.showLanguageModal = true; 
   }
 
   confirmLanguageChange(): void {
@@ -52,7 +52,6 @@ export class SettingsComponent {
       this.languageService.setLanguage(this.pendingLanguage);
       this.currentLanguage = this.pendingLanguage;
       this.pendingLanguage = null;
-      this.showLanguageModal = false;
       window.location.href = window.location.href;
     }
   }
@@ -60,7 +59,6 @@ export class SettingsComponent {
   cancelLanguageChange(): void {
     this.currentLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
     this.pendingLanguage = null;
-    this.showLanguageModal = false;
     location.reload();
   }
 
