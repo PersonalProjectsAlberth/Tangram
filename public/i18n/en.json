@@ -24,5 +24,10 @@
     "PIN": "Pin to navbar",
     "OFF": "Off",
     "ON": "On"
+  },
+  "SCA": {
+    "SCAN": "Scan",
+    "CORRECT": "Correct prediction!",
+    "INCORRECT": "Incorrect prediction!"
   }
 }

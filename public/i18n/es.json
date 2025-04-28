@@ -24,5 +24,10 @@
     "PIN": "Anclar en la barra de navegación",
     "OFF": "No",
     "ON": "Si"
+  },
+  "SCA": {
+    "SCAN": "Escanear",
+    "CORRECT": "¡Predicción correcta!",
+    "INCORRECT": "¡Predicción incorrecta!"
   }
 }

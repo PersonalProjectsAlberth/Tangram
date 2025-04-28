@@ -4,10 +4,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../services/theme.service';
 import { TensorflowService } from '../services/tensorflow.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-scan',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, TranslatePipe],
   templateUrl: './scan.component.html',
   styleUrls: ['./scan.component.css'],
 })
@@ -30,7 +31,8 @@ export class ScanComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     private themeService: ThemeService,
-    private tfService: TensorflowService
+    private tfService: TensorflowService,
+    private translate: TranslateService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -99,7 +101,7 @@ export class ScanComponent implements OnInit {
             const maxIndex = predictionreuslt.indexOf(maxValue);
 
             if (maxIndex + 1 === Number(this.shapeId)) {
-              this.predictionMessageG = '✅ Correct prediction!';
+              this.predictionMessageG = this.translate.instant('SCA.CORRECT')
 
               const state = JSON.parse(localStorage.getItem('state') || '{}');
               state[this.shapeId] = true;
@@ -111,7 +113,7 @@ export class ScanComponent implements OnInit {
               }
 
             } else {
-              this.predictionMessageB = '❌ Incorrect prediction!';
+              this.predictionMessageB = this.translate.instant('SCA.INCORRECT')
 
               if (navigator.vibrate) {
                 navigator.vibrate([100, 50, 100]);
