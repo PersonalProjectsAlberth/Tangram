@@ -15,6 +15,7 @@ export class StatisticsComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   isDarkMode: boolean = false;
   isVisible: boolean = false;
+  showDataModal: boolean = false;
 
   constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
@@ -125,12 +126,17 @@ export class StatisticsComponent implements OnInit {
   };
 
   clearState(): void {
-    const confirmation = confirm(
-      'Are you sure you want to delete your progress? This action cannot be undone.'
-    );
-    if (confirmation) {
-      localStorage.removeItem('state');
-      this.loadChartData();
-    }
+    this.showDataModal = true;
   }
+
+  confirmDeleteData(): void {
+        localStorage.removeItem('state');
+      this.loadChartData();
+      window.location.href = window.location.href;
+  }
+
+  cancelDeleteData(): void {
+    location.reload();
+  }
+
 }

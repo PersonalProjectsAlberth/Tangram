@@ -11,7 +11,11 @@
     "COMPLETED": "Completo",
     "INCOMPLETE": "Incompleto",
     "PERCENTAGE": "Porcentaje",
-    "TITLE": "Estadísticas de figuras completadas"
+    "TITLE": "Estadísticas de figuras completadas",
+    "CONFIRM_DATA_DELETE": "Esta acción no se puede deshacer",
+    "CONFIRM_DATA_MESSAGE": "¿Está seguro que desea borrar su progreso?",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar"
   },
   "SET": {
     "SETTINGS": "Configuraciones",
