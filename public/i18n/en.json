@@ -16,6 +16,13 @@
   "SET": {
     "SETTINGS": "Settings",
     "LANGUAGE": "Language",
-    "THEME": "Theme"
+    "THEME": "Theme",
+    "CONFIRM_LANGUAGE_CHANGE": "Change Language",
+    "CONFIRM_LANGUAGE_MESSAGE": "Are you sure you want to change the language?",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "PIN": "Pin to navbar",
+    "OFF": "Off",
+    "ON": "On"
   }
 }

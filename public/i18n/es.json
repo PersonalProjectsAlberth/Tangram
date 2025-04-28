@@ -16,6 +16,13 @@
   "SET": {
     "SETTINGS": "Configuraciones",
     "LANGUAGE": "Idioma",
-    "THEME": "Tema"
+    "THEME": "Tema",
+    "CONFIRM_LANGUAGE_CHANGE": "Cambio de idioma",
+    "CONFIRM_LANGUAGE_MESSAGE": "¿Está seguro de que desea cambiar el idioma?",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "PIN": "Anclar en la barra de navegación",
+    "OFF": "No",
+    "ON": "Si"
   }
 }

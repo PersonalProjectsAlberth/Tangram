@@ -74,6 +74,8 @@
       ></div>
     </label>
 
+  <!-- ---------------------------------------Modal--------------------------------------- -->
+
     <div
       *ngIf="showLanguageModal"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
@@ -186,14 +188,17 @@
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
   >
-    Fast access
+    {{ "SET.PIN" | translate }}
   </h3>
   <div class="flex items-center justify-between">
     <span
       class="text-white text-sm"
       [class.text-white]="isDarkMode"
       [class.text-black]="!isDarkMode"
-      >OFF</span
+      >
+      <!-- OFF -->
+      {{ "SET.OFF" | translate }}
+      </span
     >
 
     <label class="p-2 inline-flex items-center cursor-pointer">
@@ -211,7 +216,10 @@
       class="text-white text-sm"
       [class.text-white]="isDarkMode"
       [class.text-black]="!isDarkMode"
-      >ON</span
+      >
+      <!-- ON -->
+      {{ "SET.ON" | translate }}
+      </span
     >
   </div>
 </div>
