@@ -2,18 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ThemeService } from '../services/theme.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-statistics',
-  imports: [HighchartsChartModule],
+  imports: [HighchartsChartModule, TranslatePipe, CommonModule],
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.css',
 })
 export class StatisticsComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   isDarkMode: boolean = false;
+  isVisible: boolean = false;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -21,6 +24,9 @@ export class StatisticsComponent implements OnInit {
       this.updateChartColors(isDarkMode);
     });
     this.loadChartData();
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   updateChartColors(isDarkMode: boolean): void {
@@ -57,10 +63,10 @@ export class StatisticsComponent implements OnInit {
         series: [
           {
             type: 'pie',
-            name: 'Porcentaje',
+            name: this.translate.instant('STA.PERCENTAGE'),
             data: [
-              { name: 'Completed', y: completed },
-              { name: 'Incomplete', y: incomplete },
+              { name: this.translate.instant('STA.COMPLETED'), y: completed },
+              { name: this.translate.instant('STA.INCOMPLETE'), y: incomplete },
             ],
           },
         ],
@@ -77,7 +83,7 @@ export class StatisticsComponent implements OnInit {
     },
     colors: ['#4CAF50', '#FF5722'],
     title: {
-      text: 'Complete Shapes Statistics',
+      text: '', // Set to empty string to avoid showing the title
       style: {
         color: '#000000',
         fontSize: '20px',

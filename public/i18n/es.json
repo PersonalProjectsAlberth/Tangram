@@ -1,0 +1,34 @@
+{
+  "NAV": {
+    "SETTINGS": "Configuraciones",
+    "STATISTICS": "Estadísticas",
+    "LOGOUT": "Cerrar sesión",
+    "GOPREMIUM": "Premium"
+  },
+  "STA": {
+    "STATISTICS": "Estadísticas",
+    "DELETE": "Borrar datos",
+    "COMPLETED": "Completo",
+    "INCOMPLETE": "Incompleto",
+    "PERCENTAGE": "Porcentaje",
+    "TITLE": "Estadísticas de figuras completadas"
+  },
+  "SET": {
+    "SETTINGS": "Configuraciones",
+    "LANGUAGE": "Idioma",
+    "THEME": "Tema",
+    "CONFIRM_LANGUAGE_CHANGE": "Cambio de idioma",
+    "CONFIRM_LANGUAGE_MESSAGE": "¿Está seguro que desea cambiar el idioma?",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "PIN": "Anclar en la barra de navegación",
+    "OFF": "No",
+    "ON": "Si"
+  },
+  "SCA": {
+    "SCAN": "Escanear",
+    "CORRECT": "¡Predicción correcta!",
+    "INCORRECT": "¡Predicción incorrecta!",
+    "LOADING": "Cargando figura..."
+  }
+}

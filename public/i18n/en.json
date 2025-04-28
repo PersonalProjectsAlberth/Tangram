@@ -1,0 +1,34 @@
+{
+  "NAV": {
+    "SETTINGS": "Settings",
+    "STATISTICS": "Statistics",
+    "LOGOUT": "Logout",
+    "GOPREMIUM": "Go Premium"
+  },
+  "STA": {
+    "STATISTICS": "Statistics",
+    "DELETE": "Delete Data",
+    "COMPLETED": "Completed",
+    "INCOMPLETE": "Incomplete",
+    "PERCENTAGE": "Percentage",
+    "TITLE": "Complete Shapes Statistics"
+  },
+  "SET": {
+    "SETTINGS": "Settings",
+    "LANGUAGE": "Language",
+    "THEME": "Theme",
+    "CONFIRM_LANGUAGE_CHANGE": "Change Language",
+    "CONFIRM_LANGUAGE_MESSAGE": "Are you sure you want to change the language?",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "PIN": "Pin to navbar",
+    "OFF": "Off",
+    "ON": "On"
+  },
+  "SCA": {
+    "SCAN": "Scan",
+    "CORRECT": "Correct prediction!",
+    "INCORRECT": "Incorrect prediction!",
+    "LOADING": "Loading shape..."
+  }
+}
