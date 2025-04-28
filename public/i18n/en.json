@@ -5,6 +5,14 @@
     "LOGOUT": "Logout",
     "GOPREMIUM": "Go Premium"
   },
+  "STA": {
+    "STATISTICS": "Statistics",
+    "DELETE": "Delete Data",
+    "COMPLETED": "Completed",
+    "INCOMPLETE": "Incomplete",
+    "PERCENTAGE": "Percentage",
+    "TITLE": "Complete Shapes Statistics"
+  },
   "SET": {
     "SETTINGS": "Settings",
     "LANGUAGE": "Language",

@@ -4,7 +4,7 @@
   [class.text-white]="isDarkMode"
   [class.text-black]="!isDarkMode"
 >
-  Statistics
+  {{ 'STA.STATISTICS' | translate }}
 </h1>
   <div
     class="w-full max-w-full sm:max-w-lg mx-auto rounded-lg shadow-md overflow-hidden border-2 border-gray-300 relative"
@@ -21,7 +21,8 @@
       class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600"
       (click)="clearState()"
     >
-      Delete Data
+      <!-- Delete Data -->
+      {{ 'STA.DELETE' | translate }}
     </button>
   </div>
 </div>

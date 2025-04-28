@@ -5,6 +5,14 @@
     "LOGOUT": "Cerrar sesión",
     "GOPREMIUM": "Premium"
   },
+  "STA": {
+    "STATISTICS": "Estadísticas",
+    "DELETE": "Borrar datos",
+    "COMPLETED": "Completado",
+    "INCOMPLETE": "Incompleto",
+    "PERCENTAGE": "Porcentaje",
+    "TITLE": "Estadísticas de figuras completadas"
+  },
   "SET": {
     "SETTINGS": "Configuraciones",
     "LANGUAGE": "Idioma",
