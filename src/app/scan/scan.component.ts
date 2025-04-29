@@ -108,14 +108,14 @@ export class ScanComponent implements OnInit {
               localStorage.setItem('state', JSON.stringify(state));
               this.isShapeCompleted = true;
               
-              if (navigator.vibrate) {
-                navigator.vibrate(200);
+              if (navigator.vibrate && localStorage.getItem('vibration') === 'true') {
+                navigator.vibrate(300);
               }
 
             } else {
               this.predictionMessageB = this.translate.instant('SCA.INCORRECT')
 
-              if (navigator.vibrate) {
+              if (navigator.vibrate && localStorage.getItem('vibration') === 'true') {
                 navigator.vibrate([100, 50, 100]);
               }
 
