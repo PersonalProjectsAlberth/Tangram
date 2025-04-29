@@ -1,0 +1,39 @@
+{
+  "NAV": {
+    "SETTINGS": "設定",
+    "STATISTICS": "進捗",
+    "LOGOUT": "ログアウト",
+    "GOPREMIUM": "プレミアムに移行"
+  },
+  "STA": {
+    "STATISTICS": "進捗",
+    "DELETE": "データを削除",
+    "COMPLETED": "完了",
+    "INCOMPLETE": "未完了",
+    "PERCENTAGE": "パーセンテージ",
+    "TITLE": "図形の完了統計",
+    "CONFIRM_DATA_DELETE": "この操作は元に戻せません",
+    "CONFIRM_DATA_MESSAGE": "進捗を削除してもよろしいですか？",
+    "CONFIRM": "確認",
+    "CANCEL": "キャンセル"
+  },
+  "SET": {
+    "SETTINGS": "設定",
+    "LANGUAGE": "言語",
+    "THEME": "テーマ",
+    "CONFIRM_LANGUAGE_CHANGE": "言語を変更",
+    "CONFIRM_LANGUAGE_MESSAGE": "言語を変更してもよろしいですか？",
+    "CONFIRM": "確認",
+    "CANCEL": "キャンセル",
+    "PIN": "ナビバーにピン留め",
+    "OFF": "オフ",
+    "ON": "オン",
+    "VIB": "バイブレーション"
+  },
+  "SCA": {
+    "SCAN": "スキャン",
+    "CORRECT": "正しい予測です！",
+    "INCORRECT": "間違った予測です！",
+    "LOADING": "図形を読み込み中..."
+  }
+}
