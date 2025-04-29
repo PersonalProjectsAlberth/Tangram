@@ -1,0 +1,13 @@
+{
+    "en":{
+        "name": "English",
+        "code": "en",
+        "flag": "🇬🇧"
+    },
+    "es":{
+        "name": "Español",
+        "code": "es",
+        "flag": "🇪🇸"
+    }
+}
+
