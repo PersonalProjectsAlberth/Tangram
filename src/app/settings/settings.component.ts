@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FastAccessService } from '../services/fast-access.service';
 import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { VibrationService } from '../services/vibration.service';
 
 @Component({
   selector: 'app-settings',
@@ -22,7 +23,8 @@ export class SettingsComponent {
   constructor(
     private themeService: ThemeService,
     private fastAccessService: FastAccessService,
-    private languageService: LanguageService) {
+    private languageService: LanguageService,
+    private vibrationService: VibrationService) {
       this.currentLanguage = this.languageService.getLanguage();
     }
 
@@ -71,4 +73,12 @@ export class SettingsComponent {
     return this.fastAccessService.getFastAccess();
   }
 
+  toggleVibration(event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    this.vibrationService.setVibration(isChecked);
+  }
+
+  get vibration(): boolean {
+    return this.vibrationService.getVibration();
+  }
 }

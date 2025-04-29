@@ -1,9 +1,22 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VibrationService {
 
-  constructor() { }
+  private vibrationSubject = new BehaviorSubject<boolean>(
+    localStorage.getItem('vibration') === 'true'
+  );
+  vibration$ = this.vibrationSubject.asObservable();
+
+  setVibration(isEnabled: boolean): void {
+    localStorage.setItem('vibration', JSON.stringify(isEnabled));
+    this.vibrationSubject.next(isEnabled);
+  }
+
+  getVibration(): boolean {
+    return this.vibrationSubject.value;
+  }
 }
