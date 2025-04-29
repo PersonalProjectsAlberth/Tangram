@@ -109,7 +109,7 @@ export class ScanComponent implements OnInit {
               this.isShapeCompleted = true;
               
               if (navigator.vibrate && localStorage.getItem('vibration') === 'true') {
-                navigator.vibrate(200);
+                navigator.vibrate(300);
               }
 
             } else {
