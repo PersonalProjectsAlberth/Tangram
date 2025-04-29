@@ -1,0 +1,39 @@
+{
+  "NAV": {
+    "SETTINGS": "设置",
+    "STATISTICS": "进度",
+    "LOGOUT": "登出",
+    "GOPREMIUM": "升级为高级版"
+  },
+  "STA": {
+    "STATISTICS": "进度",
+    "DELETE": "删除数据",
+    "COMPLETED": "已完成",
+    "INCOMPLETE": "未完成",
+    "PERCENTAGE": "百分比",
+    "TITLE": "完整图形统计",
+    "CONFIRM_DATA_DELETE": "此操作无法撤销",
+    "CONFIRM_DATA_MESSAGE": "确定要删除您的进度吗？",
+    "CONFIRM": "确认",
+    "CANCEL": "取消"
+  },
+  "SET": {
+    "SETTINGS": "设置",
+    "LANGUAGE": "语言",
+    "THEME": "主题",
+    "CONFIRM_LANGUAGE_CHANGE": "更改语言",
+    "CONFIRM_LANGUAGE_MESSAGE": "确定要更改语言吗？",
+    "CONFIRM": "确认",
+    "CANCEL": "取消",
+    "PIN": "固定到导航栏",
+    "OFF": "关闭",
+    "ON": "开启",
+    "VIB": "振动"
+  },
+  "SCA": {
+    "SCAN": "扫描",
+    "CORRECT": "预测正确！",
+    "INCORRECT": "预测错误！",
+    "LOADING": "正在加载图形..."
+  }
+}

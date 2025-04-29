@@ -1,0 +1,39 @@
+{
+  "NAV": {
+    "SETTINGS": "Einstellungen",
+    "STATISTICS": "Fortschritt",
+    "LOGOUT": "Abmelden",
+    "GOPREMIUM": "Premium werden"
+  },
+  "STA": {
+    "STATISTICS": "FORTSCHRITT",
+    "DELETE": "Daten löschen",
+    "COMPLETED": "Abgeschlossen",
+    "INCOMPLETE": "Unvollständig",
+    "PERCENTAGE": "Prozentsatz",
+    "TITLE": "Vollständige Formen Statistiken",
+    "CONFIRM_DATA_DELETE": "Diese Aktion kann nicht rückgängig gemacht werden",
+    "CONFIRM_DATA_MESSAGE": "Sind Sie sicher, dass Sie Ihren Fortschritt löschen möchten?",
+    "CONFIRM": "Bestätigen",
+    "CANCEL": "Abbrechen"
+  },
+  "SET": {
+    "SETTINGS": "EINSTELLUNGEN",
+    "LANGUAGE": "Sprache",
+    "THEME": "Thema",
+    "CONFIRM_LANGUAGE_CHANGE": "Sprache ändern",
+    "CONFIRM_LANGUAGE_MESSAGE": "Sind Sie sicher, dass Sie die Sprache ändern möchten?",
+    "CONFIRM": "Bestätigen",
+    "CANCEL": "Abbrechen",
+    "PIN": "An der Navigationsleiste anheften",
+    "OFF": "Aus",
+    "ON": "Ein",
+    "VIB": "Vibration"
+  },
+  "SCA": {
+    "SCAN": "Scannen",
+    "CORRECT": "Korrekte Vorhersage!",
+    "INCORRECT": "Falsche Vorhersage!",
+    "LOADING": "Form wird geladen..."
+  }
+}

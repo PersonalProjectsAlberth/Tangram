@@ -1,0 +1,39 @@
+{
+  "NAV": {
+    "SETTINGS": "설정",
+    "STATISTICS": "진행률",
+    "LOGOUT": "로그아웃",
+    "GOPREMIUM": "프리미엄으로 전환"
+  },
+  "STA": {
+    "STATISTICS": "진행률",
+    "DELETE": "데이터 삭제",
+    "COMPLETED": "완료됨",
+    "INCOMPLETE": "미완료",
+    "PERCENTAGE": "백분율",
+    "TITLE": "도형 완료 통계",
+    "CONFIRM_DATA_DELETE": "이 작업은 되돌릴 수 없습니다",
+    "CONFIRM_DATA_MESSAGE": "진행률을 삭제하시겠습니까?",
+    "CONFIRM": "확인",
+    "CANCEL": "취소"
+  },
+  "SET": {
+    "SETTINGS": "설정",
+    "LANGUAGE": "언어",
+    "THEME": "테마",
+    "CONFIRM_LANGUAGE_CHANGE": "언어 변경",
+    "CONFIRM_LANGUAGE_MESSAGE": "언어를 변경하시겠습니까?",
+    "CONFIRM": "확인",
+    "CANCEL": "취소",
+    "PIN": "탐색 바에 고정",
+    "OFF": "끄기",
+    "ON": "켜기",
+    "VIB": "진동"
+  },
+  "SCA": {
+    "SCAN": "스캔",
+    "CORRECT": "정확한 예측입니다!",
+    "INCORRECT": "잘못된 예측입니다!",
+    "LOADING": "도형을 불러오는 중..."
+  }
+}

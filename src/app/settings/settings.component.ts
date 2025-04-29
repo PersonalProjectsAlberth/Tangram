@@ -2,31 +2,37 @@ import { Component } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import { CommonModule } from '@angular/common';
 import { FastAccessService } from '../services/fast-access.service';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { VibrationService } from '../services/vibration.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-settings',
-  imports: [CommonModule,TranslatePipe],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './settings.component.html',
-  styleUrl: './settings.component.css'
+  styleUrl: './settings.component.css',
 })
 export class SettingsComponent {
   isDarkMode = true;
   currentLanguage: string;
-  newLanguage: string = '';
+  currentLanguageName: string = '';
+  currentLanguageFlag: string = '';
   showLanguageModal: boolean = false;
   pendingLanguage: string | null = null;
   isVisible: boolean = false;
+  isDropdownOpen: boolean = false;
+  languages: { name: string; code: string; flag: string }[] = [];
 
   constructor(
     private themeService: ThemeService,
     private fastAccessService: FastAccessService,
     private languageService: LanguageService,
-    private vibrationService: VibrationService) {
-      this.currentLanguage = this.languageService.getLanguage();
-    }
+    private vibrationService: VibrationService,
+    private http: HttpClient
+  ) {
+    this.currentLanguage = this.languageService.getLanguage();
+  }
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -36,32 +42,30 @@ export class SettingsComponent {
     setTimeout(() => {
       this.isVisible = true;
     }, 0);
+
+    this.http
+      .get<{ [key: string]: { name: string; code: string; flag: string } }>(
+        '/assets/languages.json'
+      )
+      .subscribe({
+        next: (data) => {
+          this.languages = Object.values(data);
+
+          const currentLang = this.languages.find(
+            (lang) => lang.code === this.currentLanguage
+          );
+          this.currentLanguageName = currentLang?.name || '';
+          this.currentLanguageFlag = currentLang?.flag || '';
+        },
+        error: (err) => {
+          console.error('Error loading languages.json:', err);
+        },
+      });
   }
 
   toggleBackgroundColor(event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.themeService.setDarkMode(isChecked);
-  }
-
-  toggleLanguage(): void {
-    this.showLanguageModal = true;
-    this.newLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
-    this.pendingLanguage = this.newLanguage;
-  }
-
-  confirmLanguageChange(): void {
-    if (this.pendingLanguage) {
-      this.languageService.setLanguage(this.pendingLanguage);
-      this.currentLanguage = this.pendingLanguage;
-      this.pendingLanguage = null;
-      window.location.href = window.location.href;
-    }
-  }
-
-  cancelLanguageChange(): void {
-    this.currentLanguage = this.currentLanguage === 'en' ? 'es' : 'en';
-    this.pendingLanguage = null;
-    location.reload();
   }
 
   toggleFastAccess(event: Event): void {
@@ -80,5 +84,29 @@ export class SettingsComponent {
 
   get vibration(): boolean {
     return this.vibrationService.getVibration();
+  }
+
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectLanguage(lang: string): void {
+    this.pendingLanguage = lang;
+    this.showLanguageModal = true;
+    this.isDropdownOpen = false;
+  }
+
+  confirmLanguageChange2(): void {
+    if (this.pendingLanguage) {
+      this.languageService.setLanguage(this.pendingLanguage);
+      this.currentLanguage = this.pendingLanguage;
+      this.pendingLanguage = null;
+      location.reload();
+    }
+  }
+
+  cancelLanguageChange2(): void {
+    this.pendingLanguage = null;
+    window.location.href = window.location.href;
   }
 }
