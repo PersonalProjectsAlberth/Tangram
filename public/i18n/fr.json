@@ -1,0 +1,39 @@
+{
+  "NAV": {
+    "SETTINGS": "Paramètres",
+    "STATISTICS": "Progrès",
+    "LOGOUT": "Se déconnecter",
+    "GOPREMIUM": "Passer à Premium"
+  },
+  "STA": {
+    "STATISTICS": "PROGRÈS",
+    "DELETE": "Supprimer les données",
+    "COMPLETED": "Terminé",
+    "INCOMPLETE": "Incomplet",
+    "PERCENTAGE": "Pourcentage",
+    "TITLE": "Statistiques des formes complètes",
+    "CONFIRM_DATA_DELETE": "Cette action est irréversible",
+    "CONFIRM_DATA_MESSAGE": "Êtes-vous sûr de vouloir supprimer vos progrès?",
+    "CONFIRM": "Confirmer",
+    "CANCEL": "Annuler"
+  },
+  "SET": {
+    "SETTINGS": "PARAMÈTRES",
+    "LANGUAGE": "Langue",
+    "THEME": "Thème",
+    "CONFIRM_LANGUAGE_CHANGE": "Changer de langue",
+    "CONFIRM_LANGUAGE_MESSAGE": "Êtes-vous sûr de vouloir changer la langue ?",
+    "CONFIRM": "Confirmer",
+    "CANCEL": "Annuler",
+    "PIN": "Épingler à la barre de navigation",
+    "OFF": "Désactivé",
+    "ON": "Activé",
+    "VIB": "Vibration"
+  },
+  "SCA": {
+    "SCAN": "Scanner",
+    "CORRECT": "Prédiction correcte !",
+    "INCORRECT": "Prédiction incorrecte !",
+    "LOADING": "Chargement de la forme..."
+  }
+}
