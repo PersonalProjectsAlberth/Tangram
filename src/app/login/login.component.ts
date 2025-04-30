@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -14,16 +16,12 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor( private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  onLogin(): void {
-    const validUsername = 'admin';
-    const validPassword = 'admin';
-
-    if (this.username === validUsername && this.password === validPassword) {
-      localStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/shape']);
-    } else {
+  onLogin(event: Event): void {
+    event.preventDefault();
+    const success = this.authService.login(this.username, this.password);
+    if (!success) {
       this.errorMessage = 'Invalid username or password';
     }
   }
