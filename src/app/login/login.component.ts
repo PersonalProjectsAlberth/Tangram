@@ -22,7 +22,7 @@ export class LoginComponent {
     event.preventDefault();
     const success = this.authService.login(this.username, this.password);
     if (!success) {
-      this.errorMessage = 'Invalid username or password';
+      this.errorMessage = 'Invalid credentials!';
     }
   }
 
