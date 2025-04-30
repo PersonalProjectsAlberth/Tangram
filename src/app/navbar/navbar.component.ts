@@ -4,6 +4,7 @@ import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { FastAccessService } from '../services/fast-access.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,12 @@ export class NavbarComponent {
   isDropdownOpen = false;
   showFastAccess: boolean = false;
 
-  constructor(private themeService: ThemeService, private _router: Router, private fastAccessService: FastAccessService) {}
+  constructor(
+    private themeService: ThemeService,
+    private _router: Router,
+    private fastAccessService: FastAccessService,
+    private autService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -68,6 +74,10 @@ export class NavbarComponent {
 
   navegateSet(): void {
     this._router.navigate(['/settings']);
+  }
+
+  onLogout(): void {
+    this.autService.logout();
   }
 
 }

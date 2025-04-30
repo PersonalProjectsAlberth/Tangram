@@ -1,7 +1,7 @@
 <nav class="bg-gray-900 sticky top-0 left-0 w-full h-16 shadow-md z-50 rounded-b-xl">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="#" class="flex-shrink-0 flex items-center">
+      <a href="shape" class="flex-shrink-0 flex items-center">
         <img src="puzzle.png" alt="Logo" class="h-8 w-8 mr-2" />
         <span class="text-white text-lg font-bold">Tangram-App</span>
       </a>
@@ -64,25 +64,13 @@
         >
           <div
             style="
-              background-color: rgb(23, 162, 209);
-              padding: 10px;
+              background-color: rgb(234, 48, 7);
+              padding: 5px;
               display: inline-block;
               border-radius: 50%;
             "
           >
-            <svg
-              class="h-8 w-8 rounded-full"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="white"
-              class="bi bi-person-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
-              />
-            </svg>
+            <img src="avatar.png" alt="Logo" class="h-8 w-8" />
           </div>
         </button>
 
@@ -227,10 +215,10 @@
           </a> -->
 
           <a
-            href="#"
-            class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            href="login"
+            class="flex items-center px-4 py-2 text-sm bg-red-200 text-gray-700 hover:bg-gray-100 rounded-2xl"
             role="menuitem"
-            (click)="closeDropdown()"
+            (click)="closeDropdown(); onLogout()"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
