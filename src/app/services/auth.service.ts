@@ -10,7 +10,6 @@ export class AuthService {
   constructor(private router: Router) {
     const auth = localStorage.getItem('isAuthenticated');
     this.isAuthenticated = auth === 'true';
-    console.log('AuthService initialized, isAuthenticated:', this.isAuthenticated);
   }
 
   login(email: string, password: string): boolean {
