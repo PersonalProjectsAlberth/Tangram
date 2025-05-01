@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
 export class AuthService {
   private isAuthenticated = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    const auth = localStorage.getItem('isAuthenticated');
+    this.isAuthenticated = auth === 'true';
+  }
 
   login(email: string, password: string): boolean {
     if (email === 'testuser1@example.com' && password === 'testuser1' || email === '1' && password === '1') {
@@ -26,7 +29,6 @@ export class AuthService {
   }
 
   checkAuthentication(): boolean {
-    const auth = localStorage.getItem('isAuthenticated');
-    return auth === 'true';
+    return this.isAuthenticated;
   }
 }
