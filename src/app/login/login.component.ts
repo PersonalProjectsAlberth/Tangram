@@ -18,6 +18,12 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  ngOnInit(): void {
+    if (this.authService.checkAuthentication()) {
+      this.router.navigate(['/shape']);
+    }
+  }
+
   onLogin(event: Event): void {
     event.preventDefault();
     const success = this.authService.login(this.username, this.password);
