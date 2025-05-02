@@ -3,7 +3,11 @@
     "SETTINGS": "Ajustes",
     "STATISTICS": "Progreso",
     "SIGNOUT": "Cerrar sesión",
-    "GOPREMIUM": "Premium"
+    "GOPREMIUM": "Premium",
+    "CONFIRM_SIGNOUT": "Cerrar sesión",
+    "CONFIRM_SIGNOUT_MESSAGE": "¿Está seguro que desea cerrar sesión?",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar"
   },
   "STA": {
     "STATISTICS": "PROGRESO",
