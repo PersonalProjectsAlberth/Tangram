@@ -3,7 +3,11 @@
     "SETTINGS": "Настройки",
     "STATISTICS": "Прогресс",
     "SIGNOUT": "Выйти",
-    "GOPREMIUM": "Перейти на Premium"
+    "GOPREMIUM": "Перейти на Premium",
+    "CONFIRM_SIGNOUT": "Выйти",
+    "CONFIRM_SIGNOUT_MESSAGE": "Вы уверены, что хотите выйти?",
+    "CONFIRM": "Подтвердить",
+    "CANCEL": "Отмена"
   },
   "STA": {
     "STATISTICS": "ПРОГРЕСС",
