@@ -2,7 +2,7 @@
   "NAV": {
     "SETTINGS": "Settings",
     "STATISTICS": "Progress",
-    "LOGOUT": "Logout",
+    "SIGNOUT": "Sign out",
     "GOPREMIUM": "Go Premium"
   },
   "STA": {

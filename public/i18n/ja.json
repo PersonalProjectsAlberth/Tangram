@@ -2,7 +2,7 @@
   "NAV": {
     "SETTINGS": "設定",
     "STATISTICS": "進捗",
-    "LOGOUT": "ログアウト",
+    "SIGNOUT": "ログアウト",
     "GOPREMIUM": "プレミアムに移行"
   },
   "STA": {

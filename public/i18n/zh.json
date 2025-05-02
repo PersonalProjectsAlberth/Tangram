@@ -2,7 +2,7 @@
   "NAV": {
     "SETTINGS": "设置",
     "STATISTICS": "进度",
-    "LOGOUT": "登出",
+    "SIGNOUT": "登出",
     "GOPREMIUM": "升级为高级版"
   },
   "STA": {

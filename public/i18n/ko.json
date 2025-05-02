@@ -2,7 +2,7 @@
   "NAV": {
     "SETTINGS": "설정",
     "STATISTICS": "진행률",
-    "LOGOUT": "로그아웃",
+    "SIGNOUT": "로그아웃",
     "GOPREMIUM": "프리미엄으로 전환"
   },
   "STA": {
