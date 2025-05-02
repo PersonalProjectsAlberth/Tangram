@@ -3,7 +3,11 @@
     "SETTINGS": "설정",
     "STATISTICS": "진행률",
     "SIGNOUT": "로그아웃",
-    "GOPREMIUM": "프리미엄으로 전환"
+    "GOPREMIUM": "프리미엄으로 전환",
+    "CONFIRM_SIGNOUT": "로그아웃",
+    "CONFIRM_SIGNOUT_MESSAGE": "로그아웃 하시겠습니까?",
+    "CONFIRM": "확인",
+    "CANCEL": "취소"
   },
   "STA": {
     "STATISTICS": "진행률",
