@@ -22,7 +22,7 @@ export class AuthService {
     return false;
   }
 
-  logout(): void {
+  signout(): void {
     this.isAuthenticated = false;
     localStorage.removeItem('isAuthenticated');
     this.router.navigate(['/login']);

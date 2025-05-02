@@ -2,8 +2,12 @@
   "NAV": {
     "SETTINGS": "Configurações",
     "STATISTICS": "Progresso",
-    "LOGOUT": "Sair",
-    "GOPREMIUM": "Tornar-se Premium"
+    "SIGNOUT": "Sair",
+    "GOPREMIUM": "Tornar-se Premium",
+    "CONFIRM_SIGNOUT": "Sair",
+    "CONFIRM_SIGNOUT_MESSAGE": "Tem certeza de que deseja sair?",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar"
   },
   "STA": {
     "STATISTICS": "PROGRESSO",

@@ -16,6 +16,7 @@ export class NavbarComponent {
   isDarkMode = true;
   isDropdownOpen = false;
   showFastAccess: boolean = false;
+  showDataModal: boolean = false;
 
   constructor(
     private themeService: ThemeService,
@@ -76,8 +77,19 @@ export class NavbarComponent {
     this._router.navigate(['/settings']);
   }
 
-  onLogout(): void {
-    this.autService.logout();
+  onClickHandler(event: Event): void {
+    event.preventDefault();
   }
 
+  onSignout(): void {
+    this.showDataModal = true;
+  }
+
+  confirmSignout(): void {
+    this.autService.signout();
+  }
+
+  cancelSignout(): void {
+    location.reload();
+  }
 }

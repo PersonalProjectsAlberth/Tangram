@@ -27,8 +27,4 @@ export class AppComponent {
     return this.router.url !== '/login';
   }
 
-  onLogout(): void {
-    localStorage.removeItem('isLoggedIn');
-    this.router.navigate(['/login']);
-  }
 }

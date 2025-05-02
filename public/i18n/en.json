@@ -2,13 +2,17 @@
   "NAV": {
     "SETTINGS": "Settings",
     "STATISTICS": "Progress",
-    "LOGOUT": "Logout",
-    "GOPREMIUM": "Go Premium"
+    "SIGNOUT": "Sign out",
+    "GOPREMIUM": "Go Premium",
+    "CONFIRM_SIGNOUT": "Sign out",
+    "CONFIRM_SIGNOUT_MESSAGE": "Are you sure you want to Sign out?",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel"
   },
   "STA": {
     "STATISTICS": "PROGRESS",
     "DELETE": "Delete Data",
-    "COMPLETED": "Completed",
+    "COMPLETED": "Complete",
     "INCOMPLETE": "Incomplete",
     "PERCENTAGE": "Percentage",
     "TITLE": "Complete Shapes Statistics",

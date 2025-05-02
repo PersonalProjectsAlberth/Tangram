@@ -2,8 +2,12 @@
   "NAV": {
     "SETTINGS": "設定",
     "STATISTICS": "進捗",
-    "LOGOUT": "ログアウト",
-    "GOPREMIUM": "プレミアムに移行"
+    "SIGNOUT": "ログアウト",
+    "GOPREMIUM": "プレミアムに移行",
+    "CONFIRM_SIGNOUT": "ログアウト",
+    "CONFIRM_SIGNOUT_MESSAGE": "サインアウトしてもよろしいですか？",
+    "CONFIRM": "確認",
+    "CANCEL": "キャンセル"
   },
   "STA": {
     "STATISTICS": "進捗",
