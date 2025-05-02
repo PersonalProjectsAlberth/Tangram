@@ -3,7 +3,11 @@
     "SETTINGS": "Settings",
     "STATISTICS": "Progress",
     "SIGNOUT": "Sign out",
-    "GOPREMIUM": "Go Premium"
+    "GOPREMIUM": "Go Premium",
+    "CONFIRM_SIGNOUT": "Sign out",
+    "CONFIRM_SIGNOUT_MESSAGE": "Are you sure you want to Sign out?",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel"
   },
   "STA": {
     "STATISTICS": "PROGRESS",
