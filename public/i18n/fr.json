@@ -3,7 +3,11 @@
     "SETTINGS": "Paramètres",
     "STATISTICS": "Progrès",
     "SIGNOUT": "Déconnexion",
-    "GOPREMIUM": "Passer à Premium"
+    "GOPREMIUM": "Passer à Premium",
+    "CONFIRM_SIGNOUT": "Déconnexion",
+    "CONFIRM_SIGNOUT_MESSAGE": "Êtes-vous sûr de vouloir vous déconnecter ?",
+    "CONFIRM": "Confirmer",
+    "CANCEL": "Annuler"
   },
   "STA": {
     "STATISTICS": "PROGRÈS",
