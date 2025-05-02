@@ -1,6 +1,6 @@
 {
-  "name": "Tangram-App2",
-  "short_name": "Tangram2",
+  "name": "Tangram-App",
+  "short_name": "Tangram",
   "theme_color": "#101828",
   "background_color": "#101828",
   "display": "standalone",
