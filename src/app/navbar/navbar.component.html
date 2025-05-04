@@ -47,12 +47,12 @@
           />
 
           <div
-            class="relative w-12 h-6 bg-transparent border border-gray-300 rounded-full"
+            class="relative w-12 h-6 bg-gray-600 border border-slate-200 rounded-full"
           >
             <!-- Ícono de sol -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="absolute top-0.5 left-1 w-4.5 h-4.5 text-black z-10 transition-opacity"
+              class="absolute top-0.5 left-1 w-4.5 h-4.5 z-10 transition-opacity"
               [ngClass]="{
                 'opacity-100': !isDarkMode,
                 'opacity-0': isDarkMode
@@ -68,7 +68,7 @@
             <!-- Ícono de luna -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="absolute top-0.5 right-1 w-4 h-4 text-gray-500 z-10 transition-opacity"
+              class="absolute top-0.5 right-1 w-4 h-4 z-10 transition-opacity"
               [ngClass]="{
                 'opacity-100': isDarkMode,
                 'opacity-0': !isDarkMode
