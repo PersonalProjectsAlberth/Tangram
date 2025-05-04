@@ -7,7 +7,8 @@
     "CONFIRM_SIGNOUT": "ログアウト",
     "CONFIRM_SIGNOUT_MESSAGE": "サインアウトしてもよろしいですか？",
     "CONFIRM": "確認",
-    "CANCEL": "キャンセル"
+    "CANCEL": "キャンセル",
+    "HOWTOPLAY": "遊び方"
   },
   "STA": {
     "STATISTICS": "進捗",
