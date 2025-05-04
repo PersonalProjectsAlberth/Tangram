@@ -1,4 +1,11 @@
 <div class="p-4 flex flex-col items-center justify-center h-[calc(100vh-64px)]">
+  <h1
+  class="p-8 text-3xl font-bold"
+  [class.text-white]="isDarkMode"
+  [class.text-black]="!isDarkMode"
+>
+  {{ "NAV.HOWTOPLAY" | translate }}
+</h1>
   <ng-lottie
     [options]="options"
     (animationCreated)="animationCreated($event)"

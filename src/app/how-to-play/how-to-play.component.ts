@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { ThemeService } from '../services/theme.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-how-to-play',
-  imports: [LottieComponent],
+  imports: [LottieComponent, TranslatePipe],
   templateUrl: './how-to-play.component.html',
   styleUrl: './how-to-play.component.css',
 })
@@ -21,7 +22,7 @@ export class HowToPlayComponent {
 
   isDarkMode: boolean = false;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
