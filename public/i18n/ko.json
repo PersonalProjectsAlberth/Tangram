@@ -7,7 +7,8 @@
     "CONFIRM_SIGNOUT": "로그아웃",
     "CONFIRM_SIGNOUT_MESSAGE": "로그아웃 하시겠습니까?",
     "CONFIRM": "확인",
-    "CANCEL": "취소"
+    "CANCEL": "취소",
+    "HOWTOPLAY": "게임 방법"
   },
   "STA": {
     "STATISTICS": "진행률",
