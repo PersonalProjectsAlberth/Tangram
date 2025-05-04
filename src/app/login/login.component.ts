@@ -15,13 +15,18 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
+  isVisible: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     if (this.authService.checkAuthentication()) {
       this.router.navigate(['/shape']);
-    }
+    };
+
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   onLogin(event: Event): void {
