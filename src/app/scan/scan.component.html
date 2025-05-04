@@ -1,4 +1,7 @@
-<div class="flex justify-center items-center h-[calc(100vh-64px)]">
+<div
+  class="flex justify-center items-center h-[calc(100vh-64px)]"
+  [ngClass]="{ 'fade-enter': !isVisible, 'fade-enter-active': isVisible }"
+>
   <div
     *ngIf="shapePath; else notFound"
     (touchstart)="onTouchStart($event)"
@@ -49,7 +52,7 @@
       </div>
 
       <!-- Wrong mark en la esquina superior derecha -->
-       <div
+      <div
         class="absolute top-4 right-4 bg-red-500 text-white rounded-full p-1"
         *ngIf="isShapeWrong"
       >
@@ -83,7 +86,7 @@
           for="takePictureInput"
           class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer"
         >
-          {{ 'SCA.SCAN' | translate }}
+          {{ "SCA.SCAN" | translate }}
         </label>
       </div>
       <div>
@@ -142,7 +145,7 @@
 
   <ng-template #notFound>
     <p class="text-center text-gray-500 font-bold">
-      {{ 'SCA.LOADING' | translate }}
+      {{ "SCA.LOADING" | translate }}
     </p>
   </ng-template>
 </div>

@@ -24,6 +24,7 @@ export class ScanComponent implements OnInit {
   private touchStartX: number = 0;
   private touchEndX: number = 0;
   isShapeWrong: boolean = false;
+  isVisible: boolean = false;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -54,6 +55,10 @@ export class ScanComponent implements OnInit {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
       this.isDarkMode = isDarkMode;
     });
+    
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   async handlePhotoCapture(event: Event): Promise<void> {
