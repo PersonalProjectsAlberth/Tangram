@@ -157,6 +157,7 @@
           <a
             href="#"
             class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            [ngClass]="{ 'bg-gray-200 font-bold': currentRoute === '/settings' }"
             role="menuitem"
             (click)="onClickHandler($event); closeDropdown(); navegateSet()"
           >
@@ -180,6 +181,7 @@
           <a
             href="#"
             class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            [ngClass]="{ 'bg-gray-200 font-bold': currentRoute === '/statistics' }"
             role="menuitem"
             (click)="onClickHandler($event); closeDropdown(); navegateSta()"
           >
@@ -203,6 +205,7 @@
           <a
             href="#"
             class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            [ngClass]="{ 'bg-gray-200 font-bold': currentRoute === '/howtoplay' }"
             role="menuitem"
             (click)="onClickHandler($event); closeDropdown(); navegateHow()"
           >
@@ -250,7 +253,7 @@
 
           <a
             href="#"
-            class="flex items-center px-4 py-2 text-sm bg-red-200 text-gray-700 hover:bg-gray-100 rounded-2xl"
+            class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-2xl"
             role="menuitem"
             (click)="onClickHandler($event); closeDropdown(); onSignout()"
           >

@@ -17,6 +17,7 @@ export class NavbarComponent {
   isDropdownOpen = false;
   showFastAccess: boolean = false;
   showDataModal: boolean = false;
+  currentRoute: string = '';
 
   constructor(
     private themeService: ThemeService,
@@ -32,6 +33,9 @@ export class NavbarComponent {
     });
     this.fastAccessService.fastAccess$.subscribe((isEnabled) => {
       this.showFastAccess = isEnabled;
+    });
+    this._router.events.subscribe(() => {
+      this.currentRoute = this._router.url;
     });
   }
 
