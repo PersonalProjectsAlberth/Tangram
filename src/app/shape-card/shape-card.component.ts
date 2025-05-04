@@ -15,6 +15,7 @@ export class ShapeCardComponent implements OnInit{
   isDarkMode = true;
   shapes: any[] = [];
   state: { [key: string]: boolean } = {};
+  isVisible: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -33,7 +34,11 @@ export class ShapeCardComponent implements OnInit{
     const storedState = localStorage.getItem('state');
     if (storedState) {
       this.state = JSON.parse(storedState);
-    }
+    };
+
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   private _router = inject(Router);
