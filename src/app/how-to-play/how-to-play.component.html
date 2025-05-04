@@ -1,7 +1,20 @@
 <div class="p-4 flex flex-col items-center justify-center h-[calc(100vh-64px)]">
-  <ng-lottie
-    [options]="options"
-    (animationCreated)="animationCreated($event)"
-    (click)="onAnimationClick()"
-  ></ng-lottie>
+  <h1
+    class="p-8 text-3xl font-bold"
+    [class.text-white]="isDarkMode"
+    [class.text-black]="!isDarkMode"
+  >
+    {{ "NAV.HOWTOPLAY" | translate | uppercase }}
+  </h1>
+  <div
+    class="w-full max-w-full sm:max-w-lg mx-auto rounded-lg shadow-2xl overflow-hidden relative"
+    [class.bg-white]="!isDarkMode"
+    [class.bg-black]="isDarkMode"
+  >
+    <ng-lottie
+      [options]="options"
+      (animationCreated)="animationCreated($event)"
+      (click)="onAnimationClick()"
+    ></ng-lottie>
+  </div>
 </div>

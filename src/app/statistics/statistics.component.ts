@@ -17,7 +17,10 @@ export class StatisticsComponent implements OnInit {
   isVisible: boolean = false;
   showDataModal: boolean = false;
 
-  constructor(private themeService: ThemeService, private translate: TranslateService) {}
+  constructor(
+    private themeService: ThemeService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -35,7 +38,7 @@ export class StatisticsComponent implements OnInit {
       ...this.chartOptions,
       chart: {
         ...this.chartOptions.chart,
-        backgroundColor: isDarkMode ? '#000000' : '#f3f4f6',
+        backgroundColor: isDarkMode ? '#000000' : '#FFFFFF',
       },
       title: {
         ...this.chartOptions.title,
@@ -130,13 +133,12 @@ export class StatisticsComponent implements OnInit {
   }
 
   confirmDeleteData(): void {
-        localStorage.removeItem('state');
-      this.loadChartData();
-      window.location.href = window.location.href;
+    localStorage.removeItem('state');
+    this.loadChartData();
+    window.location.href = window.location.href;
   }
 
   cancelDeleteData(): void {
     location.reload();
   }
-
 }

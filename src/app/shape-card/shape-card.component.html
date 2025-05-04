@@ -1,11 +1,11 @@
 <div
-  class="py-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+  class="py-4 px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
 >
   <div
     *ngFor="let shape of shapes"
     [class.bg-black]="isDarkMode"
     [class.bg-white]="!isDarkMode"
-    class="relative max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden border-2 border-gray-300"
+    class="relative max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden"
     (click)="navegate(shape.id)"
   >
     <!-- Checkmark Icon -->

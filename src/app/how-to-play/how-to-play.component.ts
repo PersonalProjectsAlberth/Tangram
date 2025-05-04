@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { ThemeService } from '../services/theme.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-how-to-play',
-  imports: [LottieComponent],
+  imports: [LottieComponent, TranslatePipe, CommonModule],
   templateUrl: './how-to-play.component.html',
   styleUrl: './how-to-play.component.css',
 })
@@ -21,7 +23,7 @@ export class HowToPlayComponent {
 
   isDarkMode: boolean = false;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
@@ -39,6 +41,7 @@ export class HowToPlayComponent {
 
   animationCreated(animationItem: AnimationItem): void {
     this.animationItem = animationItem;
+    this.animationItem.setSpeed(0.5); 
   }
 
   onAnimationClick(): void {

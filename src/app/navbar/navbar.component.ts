@@ -17,6 +17,7 @@ export class NavbarComponent {
   isDropdownOpen = false;
   showFastAccess: boolean = false;
   showDataModal: boolean = false;
+  currentRoute: string = '';
 
   constructor(
     private themeService: ThemeService,
@@ -28,10 +29,13 @@ export class NavbarComponent {
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDarkMode) => {
       this.isDarkMode = isDarkMode;
-      document.body.className = isDarkMode ? 'bg-gray-700' : 'bg-white';
+      document.body.className = isDarkMode ? 'bg-gray-700' : 'bg-slate-200';
     });
     this.fastAccessService.fastAccess$.subscribe((isEnabled) => {
       this.showFastAccess = isEnabled;
+    });
+    this._router.events.subscribe(() => {
+      this.currentRoute = this._router.url;
     });
   }
 
