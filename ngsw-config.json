@@ -25,6 +25,7 @@
           "/assets/**",
           "/icons/**",
           "/i18n/**",
+          "/lottie/**",
           "/*.png",
           "/*.json",
           "/*.webmanifest",
