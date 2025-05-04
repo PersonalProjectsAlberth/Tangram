@@ -3,10 +3,11 @@ import { AnimationItem } from 'lottie-web';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { ThemeService } from '../services/theme.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-how-to-play',
-  imports: [LottieComponent, TranslatePipe],
+  imports: [LottieComponent, TranslatePipe, CommonModule],
   templateUrl: './how-to-play.component.html',
   styleUrl: './how-to-play.component.css',
 })
