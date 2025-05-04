@@ -7,6 +7,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { provideServiceWorker } from '@angular/service-worker';
 
+import { provideLottieOptions } from 'ngx-lottie';
+import player from 'lottie-web';
+
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
   new TranslateHttpLoader(http, './i18n/', '.json');
 
@@ -21,9 +24,13 @@ export const appConfig: ApplicationConfig = {
         useFactory: httpLoaderFactory,
         deps: [HttpClient],
       },
-    }), provideServiceWorker('ngsw-worker.js', {
+    }),
+    provideServiceWorker('ngsw-worker.js', {
             enabled: !isDevMode(),
             registrationStrategy: 'registerWhenStable:30000'
-          })
+          }),
+    provideLottieOptions({
+      player: () => player,
+    }),
   ],
 };

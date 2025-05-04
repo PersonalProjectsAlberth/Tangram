@@ -24,6 +24,8 @@
     "@tensorflow/tfjs": "^4.22.0",
     "highcharts": "^12.2.0",
     "highcharts-angular": "^4.0.1",
+    "lottie-web": "^5.12.2",
+    "ngx-lottie": "^13.0.1",
     "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.4",

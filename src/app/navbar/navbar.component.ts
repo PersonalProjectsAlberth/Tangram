@@ -77,6 +77,10 @@ export class NavbarComponent {
     this._router.navigate(['/settings']);
   }
 
+  navegateHow(): void {
+    this._router.navigate(['/howtoplay']);
+  }
+
   onClickHandler(event: Event): void {
     event.preventDefault();
   }

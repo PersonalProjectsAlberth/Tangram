@@ -5,6 +5,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { HowToPlayComponent } from './how-to-play/how-to-play.component';
 
 export const routes: Routes = [
 
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path: 'shape/:id', component: ScanComponent, canActivate: [AuthGuard]},
     {path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard]},
     {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
+    {path: 'howtoplay', component: HowToPlayComponent, canActivate: [AuthGuard]},
 
     {path: '**', redirectTo: 'login', pathMatch: 'full'},
 ];
