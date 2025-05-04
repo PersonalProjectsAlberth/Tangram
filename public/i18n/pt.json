@@ -7,7 +7,8 @@
     "CONFIRM_SIGNOUT": "Sair",
     "CONFIRM_SIGNOUT_MESSAGE": "Tem certeza de que deseja sair?",
     "CONFIRM": "Confirmar",
-    "CANCEL": "Cancelar"
+    "CANCEL": "Cancelar",
+    "HOWTOPLAY": "Como jogar"
   },
   "STA": {
     "STATISTICS": "PROGRESSO",
