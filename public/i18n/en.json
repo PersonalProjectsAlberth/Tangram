@@ -7,7 +7,8 @@
     "CONFIRM_SIGNOUT": "Sign out",
     "CONFIRM_SIGNOUT_MESSAGE": "Are you sure you want to Sign out?",
     "CONFIRM": "Confirm",
-    "CANCEL": "Cancel"
+    "CANCEL": "Cancel",
+    "HOWTOPLAY": "How to play"
   },
   "STA": {
     "STATISTICS": "PROGRESS",
