@@ -1,4 +1,6 @@
-<div class="p-4 flex flex-col items-center justify-center h-[calc(100vh-64px)]">
+<div class="p-4 flex flex-col items-center justify-center h-[calc(100vh-64px)]"
+[ngClass]="{ 'fade-enter': !isVisible, 'fade-enter-active': isVisible }"
+>
   <h1
     class="p-8 text-3xl font-bold"
     [class.text-white]="isDarkMode"

@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class HowToPlayComponent {
 
   animationItem: AnimationItem | null = null;
+  isVisible: boolean = false;
   
   options: AnimationOptions = {
     path: '/lottie/howtoplay.json',
@@ -30,6 +31,9 @@ export class HowToPlayComponent {
       this.isDarkMode = isDarkMode;
       this.updateAnimation();
     });
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   updateAnimation(): void {
