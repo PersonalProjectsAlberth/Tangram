@@ -23,6 +23,7 @@ export class ScanComponent implements OnInit {
   totalShapes: number = 0;
   private touchStartX: number = 0;
   private touchEndX: number = 0;
+  isShapeWrong: boolean = false;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -99,6 +100,7 @@ export class ScanComponent implements OnInit {
             const predictionreuslt = Array.from(prediction) as number[];
             const maxValue = Math.max(...predictionreuslt);
             const maxIndex = predictionreuslt.indexOf(maxValue);
+            this.isShapeWrong = false;
 
             if (maxIndex + 1 === Number(this.shapeId)) {
               this.predictionMessageG = this.translate.instant('SCA.CORRECT')
@@ -114,6 +116,7 @@ export class ScanComponent implements OnInit {
 
             } else {
               this.predictionMessageB = this.translate.instant('SCA.INCORRECT')
+              this.isShapeWrong = true;
 
               if (navigator.vibrate && localStorage.getItem('vibration') === 'true') {
                 navigator.vibrate([100, 50, 100]);
