@@ -15,14 +15,13 @@ export class HowToPlayComponent {
 
   animationItem: AnimationItem | null = null;
   isVisible: boolean = false;
+  isDarkMode: boolean = false;
   
   options: AnimationOptions = {
     path: '/lottie/howtoplay.json',
     loop: false,
     autoplay: true,
   };
-
-  isDarkMode: boolean = false;
 
   constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
