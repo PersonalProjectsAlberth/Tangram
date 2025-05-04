@@ -47,181 +47,187 @@
   </h1>
 
   <!-- ---------------------------------------Language--------------------------------------- -->
-  <h2
-    class="p-2 text-white text-2xl font-light"
-    [class.text-white]="isDarkMode"
-    [class.text-black]="!isDarkMode"
+  <div
+    class="w-full max-w-full flex flex-col items-center justify-center sm:max-w-lg mx-auto rounded-lg shadow-2xl overflow-hidden relative pt-4 pb-4"
+    [class.bg-white]="!isDarkMode"
+    [class.bg-black]="isDarkMode"
   >
-    - - {{ "SET.LANGUAGE" | translate }} - -
-  </h2>
-
-  <div class="relative">
-    <button
-      class="bg-gray-200 text-gray-900 px-4 py-2 rounded-lg shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-800"
-      (click)="toggleDropdown()"
-      [class.bg-gray-200]="!isDarkMode"
-      [class.bg-gray-500]="isDarkMode"
-      [class.text-gray-900]="!isDarkMode"
+    <h2
+      class="p-2 text-white text-2xl font-light"
       [class.text-white]="isDarkMode"
-      [class.hover:text-gray-900]="isDarkMode"
-      [class.hover:text-white]="!isDarkMode"
+      [class.text-black]="!isDarkMode"
     >
-      <span [innerHTML]="currentLanguageFlag"></span>
-      {{ currentLanguageName | uppercase }}
-    </button>
+      - - {{ "SET.LANGUAGE" | translate }} - -
+    </h2>
 
-    <div
-      *ngIf="isDropdownOpen"
-      class="absolute left-1/2 -translate-x-1/2 mt-2 w-48 bg-white border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-50"
-      [class.bg-white]="!isDarkMode"
-      [class.bg-gray-500]="isDarkMode"
-      [class.text-gray-900]="!isDarkMode"
-      [class.text-white]="isDarkMode"
-    >
-      <ul class="py-2">
-        <li
-          *ngFor="let lang of languages"
-          (click)="selectLanguage(lang.code)"
-          class="flex items-center justify-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer"
-          [class.bg-white]="!isDarkMode"
-          [class.bg-gray-500]="isDarkMode"
-          [class.text-gray-900]="!isDarkMode"
-          [class.text-white]="isDarkMode"
-          [class.hover:text-gray-900]="isDarkMode"
-          [class.hover:text-white]="!isDarkMode"
-        >
-          <span class="mr-2" [innerHTML]="lang.flag"></span>
-          <span>{{ lang.name }}</span>
-          <span class="ml-2" [innerHTML]="lang.flag"></span>
-        </li>
-      </ul>
+    <div class="relative">
+      <button
+        class="bg-gray-200 text-gray-900 px-4 py-2 rounded-lg shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-800"
+        (click)="toggleDropdown()"
+        [class.bg-gray-200]="!isDarkMode"
+        [class.bg-gray-500]="isDarkMode"
+        [class.text-gray-900]="!isDarkMode"
+        [class.text-white]="isDarkMode"
+        [class.hover:text-gray-900]="isDarkMode"
+        [class.hover:text-white]="!isDarkMode"
+      >
+        <span [innerHTML]="currentLanguageFlag"></span>
+        {{ currentLanguageName | uppercase }}
+      </button>
+
+      <div
+        *ngIf="isDropdownOpen"
+        class="absolute left-1/2 -translate-x-1/2 mt-2 w-48 bg-white border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-50"
+        [class.bg-white]="!isDarkMode"
+        [class.bg-gray-500]="isDarkMode"
+        [class.text-gray-900]="!isDarkMode"
+        [class.text-white]="isDarkMode"
+      >
+        <ul class="py-2">
+          <li
+            *ngFor="let lang of languages"
+            (click)="selectLanguage(lang.code)"
+            class="flex items-center justify-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer"
+            [class.bg-white]="!isDarkMode"
+            [class.bg-gray-500]="isDarkMode"
+            [class.text-gray-900]="!isDarkMode"
+            [class.text-white]="isDarkMode"
+            [class.hover:text-gray-900]="isDarkMode"
+            [class.hover:text-white]="!isDarkMode"
+          >
+            <span class="mr-2" [innerHTML]="lang.flag"></span>
+            <span>{{ lang.name }}</span>
+            <span class="ml-2" [innerHTML]="lang.flag"></span>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <!-- ---------------------------------------Theme--------------------------------------- -->
-  <div class="w-80 border-t border-gray-300 my-2"></div>
-  <h2
-    class="p-2 text-white text-2xl font-light"
-    [class.text-white]="isDarkMode"
-    [class.text-black]="!isDarkMode"
-  >
-    - - {{ "SET.THEME" | translate }} - -
-  </h2>
-  <div class="flex items-center justify-between w-1/2 max-w-xs">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
-      fill="currentColor"
-      class="bi bi-sun-fill"
-      [class.text-gray-600]="isDarkMode"
-      [class.text-black]="!isDarkMode"
-      viewBox="0 0 16 16"
-    >
-      <path
-        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
-      />
-    </svg>
-
-    <label class="inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        class="sr-only peer"
-        [checked]="isDarkMode"
-        (change)="toggleBackgroundColor($event)"
-      />
-      <div
-        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
-      ></div>
-    </label>
-
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="26"
-      height="26"
-      fill="currentColor"
-      class="bi bi-moon-fill"
-      [class.text-white]="isDarkMode"
-      [class.text-gray-300]="!isDarkMode"
-      viewBox="0 0 16 16"
-    >
-      <path
-        d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
-      />
-    </svg>
-  </div>
-  <h3
-    class="pt-2 text-white text-base"
-    [class.text-white]="isDarkMode"
-    [class.text-black]="!isDarkMode"
-  >
-    {{ "SET.PIN" | translate }}
-  </h3>
-  <div class="flex items-center justify-between">
-    <span
-      class="text-white text-sm"
+    <!-- ---------------------------------------Theme--------------------------------------- -->
+    <div class="w-80 border-t border-gray-300 my-2"></div>
+    <h2
+      class="p-2 text-white text-2xl font-light"
       [class.text-white]="isDarkMode"
       [class.text-black]="!isDarkMode"
     >
-      {{ "SET.OFF" | translate }}
-    </span>
+      - - {{ "SET.THEME" | translate }} - -
+    </h2>
+    <div class="flex items-center justify-between w-1/2 max-w-xs">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-sun-fill"
+        [class.text-gray-600]="isDarkMode"
+        [class.text-black]="!isDarkMode"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+        />
+      </svg>
 
-    <label class="p-2 inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        class="sr-only peer"
-        [checked]="fastAccess"
-        (change)="toggleFastAccess($event)"
-      />
-      <div
-        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
-      ></div>
-    </label>
-    <span
-      class="text-white text-sm"
+      <label class="inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          class="sr-only peer"
+          [checked]="isDarkMode"
+          (change)="toggleBackgroundColor($event)"
+        />
+        <div
+          class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
+        ></div>
+      </label>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="26"
+        fill="currentColor"
+        class="bi bi-moon-fill"
+        [class.text-white]="isDarkMode"
+        [class.text-gray-300]="!isDarkMode"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+        />
+      </svg>
+    </div>
+    <h3
+      class="pt-2 text-white text-base"
       [class.text-white]="isDarkMode"
       [class.text-black]="!isDarkMode"
     >
-      {{ "SET.ON" | translate }}
-    </span>
-  </div>
+      {{ "SET.PIN" | translate }}
+    </h3>
+    <div class="flex items-center justify-between">
+      <span
+        class="text-white text-sm"
+        [class.text-white]="isDarkMode"
+        [class.text-black]="!isDarkMode"
+      >
+        {{ "SET.OFF" | translate }}
+      </span>
 
-  <!-- ---------------------------------------Vibration--------------------------------------- -->
+      <label class="p-2 inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          class="sr-only peer"
+          [checked]="fastAccess"
+          (change)="toggleFastAccess($event)"
+        />
+        <div
+          class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
+        ></div>
+      </label>
+      <span
+        class="text-white text-sm"
+        [class.text-white]="isDarkMode"
+        [class.text-black]="!isDarkMode"
+      >
+        {{ "SET.ON" | translate }}
+      </span>
+    </div>
 
-  <div class="w-80 border-t border-gray-300 my-2 hidden-ios"></div>
-  <h2
-    class="p-2 text-white text-2xl font-light hidden-ios"
-    [class.text-white]="isDarkMode"
-    [class.text-black]="!isDarkMode"
-  >
-    - - {{ "SET.VIB" | translate }} - -
-  </h2>
-  <div class="flex items-center justify-between hidden-ios">
-    <span
-      class="text-white text-sm"
+    <!-- ---------------------------------------Vibration--------------------------------------- -->
+
+    <div class="w-80 border-t border-gray-300 my-2 hidden-ios"></div>
+    <h2
+      class="p-2 text-white text-2xl font-light hidden-ios"
       [class.text-white]="isDarkMode"
       [class.text-black]="!isDarkMode"
     >
-      {{ "SET.OFF" | translate }}
-    </span>
+      - - {{ "SET.VIB" | translate }} - -
+    </h2>
+    <div class="flex items-center justify-between hidden-ios">
+      <span
+        class="text-white text-sm"
+        [class.text-white]="isDarkMode"
+        [class.text-black]="!isDarkMode"
+      >
+        {{ "SET.OFF" | translate }}
+      </span>
 
-    <label class="p-2 inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        class="sr-only peer"
-        [checked]="vibration"
-        (change)="toggleVibration($event)"
-      />
-      <div
-        class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
-      ></div>
-    </label>
-    <span
-      class="text-white text-sm"
-      [class.text-white]="isDarkMode"
-      [class.text-black]="!isDarkMode"
-    >
-      {{ "SET.ON" | translate }}
-    </span>
+      <label class="p-2 inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          class="sr-only peer"
+          [checked]="vibration"
+          (change)="toggleVibration($event)"
+        />
+        <div
+          class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-green-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
+        ></div>
+      </label>
+      <span
+        class="text-white text-sm"
+        [class.text-white]="isDarkMode"
+        [class.text-black]="!isDarkMode"
+      >
+        {{ "SET.ON" | translate }}
+      </span>
+    </div>
   </div>
 </div>
