@@ -43,7 +43,13 @@ export class HowToPlayComponent {
 
   onAnimationClick(): void {
     if (this.animationItem) {
-      this.animationItem.goToAndPlay(0, true);
+      if (this.animationItem.currentFrame >= this.animationItem.totalFrames - 1) {
+        this.animationItem.goToAndPlay(0, true);
+      } else if (this.animationItem.isPaused) {
+        this.animationItem.play();
+      } else {
+        this.animationItem.pause();
+      }
     }
   }
 }
