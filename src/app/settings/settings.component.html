@@ -48,7 +48,7 @@
 
   <!-- ---------------------------------------Language--------------------------------------- -->
   <div
-    class="w-full max-w-full flex flex-col items-center justify-center sm:max-w-lg mx-auto rounded-lg shadow-2xl overflow-hidden relative pt-4 pb-4"
+    class="w-full max-w-full flex flex-col items-center justify-center sm:max-w-lg mx-auto rounded-lg shadow-2xl overflow-visible relative pt-4 pb-4"
     [class.bg-white]="!isDarkMode"
     [class.bg-black]="isDarkMode"
   >
@@ -95,9 +95,16 @@
             [class.hover:text-gray-900]="isDarkMode"
             [class.hover:text-white]="!isDarkMode"
           >
-            <span class="mr-2" [innerHTML]="lang.flag"></span>
-            <span>{{ lang.name }}</span>
-            <span class="ml-2" [innerHTML]="lang.flag"></span>
+            <div
+              [ngClass]="{
+                'bg-gray-200 p-1 rounded-xl font-extrabold text-black':
+                  lang.name === currentLanguageName
+              }"
+            >
+              <span class="mr-2" [innerHTML]="lang.flag"></span>
+              <span>{{ lang.name }}</span>
+              <span class="ml-2" [innerHTML]="lang.flag"></span>
+            </div>
           </li>
         </ul>
       </div>
