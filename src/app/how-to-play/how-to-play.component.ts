@@ -39,6 +39,7 @@ export class HowToPlayComponent {
 
   animationCreated(animationItem: AnimationItem): void {
     this.animationItem = animationItem;
+    this.animationItem.setSpeed(0.5); 
   }
 
   onAnimationClick(): void {
