@@ -34,7 +34,7 @@ export class StatisticsComponent implements OnInit {
     }, 0);
     setTimeout(() => {
       this.isTitleVisible = true;
-    }, 500);
+    }, 200);
   }
 
   updateChartColors(isDarkMode: boolean): void {

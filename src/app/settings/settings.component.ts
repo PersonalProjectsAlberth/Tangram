@@ -45,7 +45,7 @@ export class SettingsComponent {
     }, 0);
     setTimeout(() => {
       this.isTitleVisible = true;
-    }, 500);
+    }, 200);
 
     this.http
       .get<{ [key: string]: { name: string; code: string; flag: string } }>(
