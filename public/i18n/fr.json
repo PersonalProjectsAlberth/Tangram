@@ -39,6 +39,7 @@
     "SCAN": "Scanner",
     "CORRECT": "Prédiction correcte !",
     "INCORRECT": "Prédiction incorrecte !",
-    "LOADING": "Chargement de la forme..."
+    "LOADING": "Chargement de la forme...",
+    "ANALYZING": "Analyse de la forme..."
   }
 }
