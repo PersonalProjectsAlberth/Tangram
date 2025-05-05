@@ -39,6 +39,7 @@
     "SCAN": "Escanear",
     "CORRECT": "Previsão correta!",
     "INCORRECT": "Previsão incorreta!",
-    "LOADING": "Carregando forma..."
+    "LOADING": "Carregando forma...",
+    "ANALYZING": "Analisando forma..."
   }
 }
