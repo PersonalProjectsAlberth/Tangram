@@ -42,6 +42,7 @@
     class="p-4 text-white text-3xl font-bold"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
+    [ngClass]="{ 'title-enter': !isTitleVisible, 'title-enter-active': isTitleVisible }"
   >
     {{ "SET.SETTINGS" | translate }}
   </h1>
