@@ -136,7 +136,7 @@ export class ScanComponent implements OnInit {
           } catch (error) {
             console.error('Error al hacer la predicción:', error);
           }finally {
-          this.isAnalyzing = false; // Finaliza el estado de análisis
+          this.isAnalyzing = false;
         }
 
           URL.revokeObjectURL(imageUrl);
