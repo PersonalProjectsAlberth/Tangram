@@ -39,6 +39,7 @@
     "SCAN": "Scan",
     "CORRECT": "Correct prediction!",
     "INCORRECT": "Incorrect prediction!",
-    "LOADING": "Loading shape..."
+    "LOADING": "Loading shape...",
+    "ANALYZING": "Analyzing shape..."
   }
 }
