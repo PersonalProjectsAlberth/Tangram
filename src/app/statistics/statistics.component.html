@@ -38,6 +38,7 @@
     class="p-8 text-3xl font-bold"
     [class.text-white]="isDarkMode"
     [class.text-black]="!isDarkMode"
+    [ngClass]="{ 'title-enter': !isTitleVisible, 'title-enter-active': isTitleVisible }"
   >
     {{ "STA.STATISTICS" | translate }}
   </h1>

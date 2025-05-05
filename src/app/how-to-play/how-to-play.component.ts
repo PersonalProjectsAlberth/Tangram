@@ -14,14 +14,15 @@ import { CommonModule } from '@angular/common';
 export class HowToPlayComponent {
 
   animationItem: AnimationItem | null = null;
+  isVisible: boolean = false;
+  isDarkMode: boolean = false;
+  isTitleVisible: boolean = false;
   
   options: AnimationOptions = {
     path: '/lottie/howtoplay.json',
     loop: false,
     autoplay: true,
   };
-
-  isDarkMode: boolean = false;
 
   constructor(private themeService: ThemeService, private translate: TranslateService) {}
 
@@ -30,6 +31,12 @@ export class HowToPlayComponent {
       this.isDarkMode = isDarkMode;
       this.updateAnimation();
     });
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
+    setTimeout(() => {
+      this.isTitleVisible = true;
+    }, 500);
   }
 
   updateAnimation(): void {

@@ -39,6 +39,7 @@
     "SCAN": "Scannen",
     "CORRECT": "Korrekte Vorhersage!",
     "INCORRECT": "Falsche Vorhersage!",
-    "LOADING": "Form wird geladen..."
+    "LOADING": "Form wird geladen...",
+    "ANALYZING": "Form wird analysiert..."
   }
 }

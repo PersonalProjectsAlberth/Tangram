@@ -23,6 +23,7 @@ export class SettingsComponent {
   isVisible: boolean = false;
   isDropdownOpen: boolean = false;
   languages: { name: string; code: string; flag: string }[] = [];
+  isTitleVisible: boolean = false;
 
   constructor(
     private themeService: ThemeService,
@@ -42,6 +43,9 @@ export class SettingsComponent {
     setTimeout(() => {
       this.isVisible = true;
     }, 0);
+    setTimeout(() => {
+      this.isTitleVisible = true;
+    }, 200);
 
     this.http
       .get<{ [key: string]: { name: string; code: string; flag: string } }>(

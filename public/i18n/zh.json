@@ -39,6 +39,7 @@
     "SCAN": "扫描",
     "CORRECT": "预测正确！",
     "INCORRECT": "预测错误！",
-    "LOADING": "正在加载图形..."
+    "LOADING": "正在加载图形...",
+    "ANALYZING": "正在分析图形..."
   }
 }

@@ -16,6 +16,7 @@ export class StatisticsComponent implements OnInit {
   isDarkMode: boolean = false;
   isVisible: boolean = false;
   showDataModal: boolean = false;
+  isTitleVisible: boolean = false;
 
   constructor(
     private themeService: ThemeService,
@@ -31,6 +32,9 @@ export class StatisticsComponent implements OnInit {
     setTimeout(() => {
       this.isVisible = true;
     }, 0);
+    setTimeout(() => {
+      this.isTitleVisible = true;
+    }, 200);
   }
 
   updateChartColors(isDarkMode: boolean): void {

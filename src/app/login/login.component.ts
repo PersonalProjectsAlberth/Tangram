@@ -15,13 +15,19 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
+  isVisible: boolean = false;
+  showPassword: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     if (this.authService.checkAuthentication()) {
       this.router.navigate(['/shape']);
-    }
+    };
+
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 0);
   }
 
   onLogin(event: Event): void {
@@ -30,6 +36,13 @@ export class LoginComponent {
     if (!success) {
       this.errorMessage = 'Invalid credentials!';
     }
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = true;
+    setTimeout(() => {
+      this.showPassword = false;
+    }, 5000);
   }
 
 }
