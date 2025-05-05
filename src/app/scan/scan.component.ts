@@ -25,6 +25,7 @@ export class ScanComponent implements OnInit {
   private touchEndX: number = 0;
   isShapeWrong: boolean = false;
   isVisible: boolean = false;
+  isAnalyzing: boolean = false;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -64,6 +65,8 @@ export class ScanComponent implements OnInit {
   async handlePhotoCapture(event: Event): Promise<void> {
     this.predictionMessageG = '';
     this.predictionMessageB = '';
+    this.isAnalyzing = true;
+
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       const selectedFile = input.files[0];
@@ -74,12 +77,14 @@ export class ScanComponent implements OnInit {
         const canvas = this.canvasElement?.nativeElement;
         if (!canvas) {
           console.error('El canvas no está disponible en el DOM.');
+          this.isAnalyzing = false;
           return;
         }
 
         const ctx = canvas.getContext('2d');
         if (!ctx) {
           console.error('No se pudo obtener el contexto 2D del canvas.');
+          this.isAnalyzing = false;
           return;
         }
 
@@ -130,12 +135,16 @@ export class ScanComponent implements OnInit {
             }
           } catch (error) {
             console.error('Error al hacer la predicción:', error);
-          }
+          }finally {
+          this.isAnalyzing = false; // Finaliza el estado de análisis
+        }
 
           URL.revokeObjectURL(imageUrl);
         };
         img.src = imageUrl;
       }, 10);
+    }else {
+      this.isAnalyzing = false; 
     }
   }
 

@@ -72,6 +72,11 @@
         </svg>
       </div>
 
+      <div *ngIf="isAnalyzing" class="text-center text-gray-500 font-bold">
+        Analyzing...
+        <!-- {{ "SCA.ANALYZING" | translate }} -->
+      </div>
+
       <div class="p-2 text-center">
         <!-- Botón para tomar una foto -->
         <input
