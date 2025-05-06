@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ThemeService } from '../services/theme.service';
 import { TensorflowService } from '../services/tensorflow.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { IdbService } from '../services/idb.service';
 
 @Component({
   selector: 'app-scan',
@@ -35,7 +36,8 @@ export class ScanComponent implements OnInit {
     private http: HttpClient,
     private themeService: ThemeService,
     private tfService: TensorflowService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private indexedDBService: IdbService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -119,6 +121,9 @@ export class ScanComponent implements OnInit {
               state[this.shapeId] = true;
               localStorage.setItem('state', JSON.stringify(state));
               this.isShapeCompleted = true;
+
+              const imageData = canvas.toDataURL('image/png');
+              await this.indexedDBService.savePhoto(this.shapeId, imageData);
               
               if (navigator.vibrate && localStorage.getItem('vibration') === 'true') {
                 navigator.vibrate(300);
