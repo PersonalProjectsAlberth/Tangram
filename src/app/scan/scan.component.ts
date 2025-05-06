@@ -27,6 +27,8 @@ export class ScanComponent implements OnInit {
   isShapeWrong: boolean = false;
   isVisible: boolean = false;
   isAnalyzing: boolean = false;
+  isModalOpen: boolean = false;
+  modalImageSrc: string | null = null;
 
   @ViewChild('canvasElement', { static: false })
   canvasElement!: ElementRef<HTMLCanvasElement>;
@@ -191,5 +193,20 @@ export class ScanComponent implements OnInit {
     } else if (this.touchEndX > this.touchStartX + swipeThreshold) {
       this.navigateToPrevious();
     }
+  }
+
+  async openModalWithImage(id: string): Promise<void> {
+    const photo = await this.indexedDBService.getPhoto(id);
+    if (photo) {
+      this.modalImageSrc = photo.image;
+      this.isModalOpen = true;
+    } else {
+      console.error('No photo in IndexedDB.');
+    }
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.modalImageSrc = null;
   }
 }
