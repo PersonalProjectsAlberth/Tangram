@@ -3,7 +3,7 @@ import { openDB, IDBPDatabase } from 'idb';
 
 interface Photo {
   id: string;
-  name: string;
+  image: string;
 }
 
 @Injectable({
