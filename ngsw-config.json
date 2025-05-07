@@ -26,7 +26,7 @@
           "/icons/**",
           "/i18n/**",
           "/lottie/**",
-          "/*.jpeg",
+          "/*.jpg",
           "/*.png",
           "/*.json",
           "/*.webmanifest",
