@@ -4,6 +4,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { ThemeService } from '../services/theme.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { IdbService } from '../services/idb.service';
 
 @Component({
   selector: 'app-statistics',
@@ -20,7 +21,8 @@ export class StatisticsComponent implements OnInit {
 
   constructor(
     private themeService: ThemeService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private idbService: IdbService
   ) {}
 
   ngOnInit(): void {
@@ -138,6 +140,7 @@ export class StatisticsComponent implements OnInit {
 
   confirmDeleteData(): void {
     localStorage.removeItem('state');
+    this.idbService.clearDatabase()
     this.loadChartData();
     window.location.href = window.location.href;
   }
