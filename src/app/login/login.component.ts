@@ -17,6 +17,8 @@ export class LoginComponent {
   errorMessage: string = '';
   isVisible: boolean = false;
   showPassword: boolean = false;
+  timer: number = 0;
+  timerInterval: any;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -38,11 +40,25 @@ export class LoginComponent {
     }
   }
 
+  startTimer(): void {
+    this.timer = 10
+    this.timerInterval = setInterval(() => {
+      if (this.timer > 0) {
+        this.timer--;
+      } else {
+        clearInterval(this.timerInterval);
+      }
+    }, 1000);
+  }
+
   togglePasswordVisibility(): void {
     this.showPassword = true;
+    if (this.timer === 0) {
+      this.startTimer();
+    }
     setTimeout(() => {
       this.showPassword = false;
-    }, 5000);
+    }, 10000);
   }
 
 }
