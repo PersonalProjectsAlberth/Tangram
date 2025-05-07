@@ -52,7 +52,7 @@
         ></canvas>
       </div>
 
-      <!-- Check mark en la esquina superior derecha -->
+      <!-- Eye en la esquina superior derecha -->
       <div
         class="absolute top-4 right-4 bg-green-500 text-white rounded-full p-1"
         *ngIf="isShapeCompleted"
@@ -60,16 +60,15 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-eye-fill"
+          viewBox="0 0 16 16"
         >
+          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 13l4 4L19 7"
+            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"
           />
         </svg>
       </div>
@@ -137,7 +136,7 @@
           width="40"
           height="40"
           [attr.fill]="isDarkMode ? 'black' : 'white'"
-          class="bi bi-arrow-left-circle-fill"
+          class="bi bi-arrow-left-circle-fill -m-2"
           viewBox="0 0 16 16"
         >
           <path
@@ -159,7 +158,7 @@
           width="40"
           height="40"
           [attr.fill]="isDarkMode ? 'black' : 'white'"
-          class="bi bi-arrow-right-circle-fill"
+          class="bi bi-arrow-right-circle-fill -m-2"
           viewBox="0 0 16 16"
         >
           <path

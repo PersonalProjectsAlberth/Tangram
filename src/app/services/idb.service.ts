@@ -9,7 +9,6 @@ interface Photo {
 @Injectable({
   providedIn: 'root',
 })
-
 export class IdbService {
   private dbPromise: Promise<IDBPDatabase>;
 
@@ -49,5 +48,11 @@ export class IdbService {
   async getAllPhotos(): Promise<Photo[]> {
     const db = await this.dbPromise;
     return db.getAll('photos');
+  }
+
+  // Borra toda la base de datos IndexedDB
+  async clearDatabase(): Promise<void> {
+    const dbName = 'PhotoDB';
+    await indexedDB.deleteDatabase(dbName);
   }
 }
