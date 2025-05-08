@@ -209,4 +209,8 @@ export class ScanComponent implements OnInit {
     this.isModalOpen = false;
     this.modalImageSrc = null;
   }
+
+  onClickHandler(event: Event): void {
+    event.preventDefault();
+  }
 }
