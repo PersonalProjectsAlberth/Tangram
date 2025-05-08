@@ -95,6 +95,9 @@ export class NavbarComponent {
 
   onSignout(): void {
     this.showDataModal = true;
+    if ( localStorage.getItem('vibration') === 'true') {
+      navigator.vibrate(100);
+    }
   }
 
   confirmSignout(): void {
