@@ -73,6 +73,10 @@ export class NavbarComponent {
     this.closeDropdown();
   }
 
+  navegateShape(): void {
+    this._router.navigate(['/shape']);
+  }
+
   navegateSta(): void {
     this._router.navigate(['/statistics']);
   }
