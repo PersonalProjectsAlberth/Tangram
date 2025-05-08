@@ -73,6 +73,10 @@ export class NavbarComponent {
     this.closeDropdown();
   }
 
+  navegateShape(): void {
+    this._router.navigate(['/shape']);
+  }
+
   navegateSta(): void {
     this._router.navigate(['/statistics']);
   }
@@ -91,6 +95,9 @@ export class NavbarComponent {
 
   onSignout(): void {
     this.showDataModal = true;
+    if ( localStorage.getItem('vibration') === 'true') {
+      navigator.vibrate(100);
+    }
   }
 
   confirmSignout(): void {

@@ -126,7 +126,8 @@
     </div>
     <div class="flex justify-between items-center mt-4">
       <button
-        (click)="navigateToPrevious()"
+        href="#"
+        (click)="onClickHandler($event); navigateToPrevious()"
         [class.bg-white]="isDarkMode"
         [class.bg-gray-500]="!isDarkMode"
         class="rounded-full hover:bg-gray-600"
@@ -148,7 +149,8 @@
         {{ shapeId }}/{{ totalShapes }}
       </div>
       <button
-        (click)="navigateToNext()"
+        href="#"
+        (click)="onClickHandler($event); navigateToNext()"
         [class.bg-white]="isDarkMode"
         [class.bg-gray-500]="!isDarkMode"
         class="rounded-full hover:bg-gray-600"

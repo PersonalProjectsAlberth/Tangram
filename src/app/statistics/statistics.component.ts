@@ -136,6 +136,9 @@ export class StatisticsComponent implements OnInit {
 
   clearState(): void {
     this.showDataModal = true;
+    if ( localStorage.getItem('vibration') === 'true') {
+      navigator.vibrate(100);
+    }
   }
 
   confirmDeleteData(): void {
