@@ -98,6 +98,9 @@ export class SettingsComponent {
     this.pendingLanguage = lang;
     this.showLanguageModal = true;
     this.isDropdownOpen = false;
+    if ( localStorage.getItem('vibration') === 'true') {
+      navigator.vibrate(100);
+    }
   }
 
   confirmLanguageChange2(): void {
