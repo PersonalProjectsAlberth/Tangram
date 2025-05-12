@@ -13,7 +13,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): boolean {
-    if (email === 'testuser1@example.com' && password === 'testuser1') {
+    if (email === 'testuser1@example.com' && password === 'Tan*pass40#') {
       this.isAuthenticated = true;
       localStorage.setItem('isAuthenticated', 'true');
       this.router.navigate(['/shape']);
